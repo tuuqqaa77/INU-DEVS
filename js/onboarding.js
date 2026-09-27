@@ -1,13 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // تحديد مدة العرض (مثلاً 2.5 ثانية) ثم الانتقال إلى صفحة الصفحة الرئيسية home.html
-    const DISPLAY_DURATION = 2500; // بالمللي ثانية
+document.addEventListener("DOMContentLoaded", () => {
+  const getStartedBtn = document.getElementById("getStartedBtn");
 
-    setTimeout(() => {
-        // إضافة أثر اختفاء ناعم (Fade-out) قبل التحويل
-        document.body.classList.add('fade-out');
+  if (getStartedBtn) {
+    getStartedBtn.addEventListener("click", () => {
+      // تأثير اختفاء تدريجي ناعم قبل الانتقال
+      document.body.style.transition = "opacity 0.35s ease";
+      document.body.style.opacity = "0";
 
-        setTimeout(() => {
-            window.location.href = 'home.html';
-        }, 500); // ينتظر نصف ثانية لاستكمال تأثير الاختفاء
-    }, DISPLAY_DURATION);
+      // التوجيه لصفحة تسجيل الدخول login.html
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 350);
+    });
+  }
 });
