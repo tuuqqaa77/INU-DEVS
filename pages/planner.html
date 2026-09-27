@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JOVIA - Plan Your Smart Trip</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <main class="planner-page">
+
+        <!-- Header -->
+        <header class="planner-header">
+
+            <div class="brand-area">
+
+                <span class="brand-name">
+                    JOVIA
+                </span>
+
+                <img
+                    class="profile-avatar"
+                    src="../assets/images/avatar.png"
+                    alt="Profile"
+                >
+
+            </div>
+
+            <button
+                class="language-button"
+                type="button">
+
+                🌐 English
+
+            </button>
+
+        </header>
+
+
+        <!-- Page Title -->
+        <section class="planner-content">
+
+            <h1>
+                Plan Your Smart Trip
+            </h1>
+
+
+            <!-- Budget -->
+            <section class="planner-card budget-card">
+
+                <div class="card-header">
+
+                    <div class="step-number">
+                        1
+                    </div>
+
+                    <div class="card-title">
+
+                        <h2>
+                            Budget
+                        </h2>
+
+                        <p>
+                            Tell us how you are planning to spend
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="budget-options">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="budget"
+                            value="50">
+                        50 JOD
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="budget"
+                            value="100">
+                        100 JOD
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="budget"
+                            value="250">
+                        250 JOD
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="budget"
+                            value="500">
+                        +500 JOD
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <!-- Trip Details -->
+            <section class="planner-card trip-details-card">
+
+                <div class="card-header">
+
+                    <div class="step-number">
+                        2
+                    </div>
+
+                    <div class="card-title">
+
+                        <h2>
+                            Trip Details
+                        </h2>
+
+                        <p>
+                            Where are you going? And for how long?
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="trip-fields">
+
+                    <div class="trip-field">
+
+                        <label for="days">
+                            Number Of Days
+                        </label>
+
+                        <select
+                            id="days"
+                            name="days">
+
+                            <option value="3">
+                                3 Days
+                            </option>
+
+                            <option value="4">
+                                4 Days
+                            </option>
+
+                            <option value="5">
+                                5 Days
+                            </option>
+
+                            <option value="7">
+                                7 Days
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="trip-field">
+
+                        <label for="starting-point">
+                            Starting Point / Arrival
+                        </label>
+
+                        <select
+                            id="starting-point"
+                            name="starting-point">
+
+                            <option value="amman">
+                                Amman
+                            </option>
+
+                            <option value="aqaba">
+                                Aqaba
+                            </option>
+
+                            <option value="airport">
+                                Queen Alia Airport
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Interests -->
+            <section class="planner-card interests-card">
+
+                <div class="card-header">
+
+                    <div class="step-number">
+                        3
+                    </div>
+
+                    <div class="card-title">
+
+                        <h2>
+                            Your Interests
+                        </h2>
+
+                        <p>
+                            What kind of experiences do you enjoy?
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="interest-options">
+
+                    <label class="interest-option">
+
+                        <input
+                            type="checkbox"
+                            name="interests"
+                            value="adventure">
+
+                        <span>
+                            Adventure
+                        </span>
+
+                    </label>
+
+
+                    <label class="interest-option">
+
+                        <input
+                            type="checkbox"
+                            name="interests"
+                            value="local-food">
+
+                        <span>
+                            Local Food
+                        </span>
+
+                    </label>
+
+
+                    <label class="interest-option">
+
+                        <input
+                            type="checkbox"
+                            name="interests"
+                            value="history">
+
+                        <span>
+                            History
+                        </span>
+
+                    </label>
+
+
+                    <label class="interest-option">
+
+                        <input
+                            type="checkbox"
+                            name="interests"
+                            value="nature">
+
+                        <span>
+                            Nature
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <!-- Generate Trip -->
+            <button
+                type="button"
+                class="generate-trip-button">
+
+                Generate My Trip
+
+            </button>
+
+        </section>
+
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-navigation">
+
+            <a href="#">
+                Profile
+            </a>
+
+            <a href="#">
+                Home
+            </a>
+
+            <a href="#">
+                Map
+            </a>
+
+            <a href="#">
+                Know Jordan
+            </a>
+
+        </nav>
+
+    </main>
+
+</body>
+
+</html>

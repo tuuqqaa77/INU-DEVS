@@ -1,0 +1,2022 @@
+/* =========================
+   Global Reset & Base Setup
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================
+   Onboarding Page Container
+========================= */
+
+.onboarding-page {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.30)
+        ),
+        url("../assets/images/petra-desktop.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================
+   Header & Glass Controls
+========================= */
+
+.onboarding-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px 0;
+    z-index: 10;
+}
+
+/* Glass Pill (Sign In + Nashmi Avatar Button) */
+.header-glass-left {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 6px 8px 6px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.22);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.sign-in-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.avatar-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.avatar-link:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.profile-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Glass Language Button */
+.language-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.22);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    color: #ffffff;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.globe-icon {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* =========================
+   Brand Typography Section
+========================= */
+
+.onboarding-brand {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.onboarding-brand .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 400;
+    letter-spacing: 6px;
+    line-height: 1;
+    color: #ffffff;
+}
+
+.onboarding-brand .tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    margin-top: 10px;
+    opacity: 0.95;
+}
+
+.onboarding-brand .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-top: 6px;
+    opacity: 0.85;
+}
+
+
+/* =========================
+   Experience Badges
+========================= */
+
+.experience-badges {
+    width: 440px;
+    max-width: calc(100% - 40px);
+
+    margin: auto auto 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.experience-badge {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 14px 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.22);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.badge-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 36px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.badge-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: #ffffff;
+}
+
+.experience-badge span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+
+/* =========================
+   Get Started Call To Action
+========================= */
+
+.get-started-button {
+    width: 440px;
+    max-width: calc(100% - 40px);
+
+    margin: 0 auto 36px;
+
+    padding: 16px;
+
+    border: none;
+    border-radius: 18px;
+
+    background: #bd4c39;
+
+    color: #ffffff;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(189, 76, 57, 0.4);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.get-started-button:hover {
+    background-color: #a8402f;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   Mobile Responsiveness
+========================= */
+
+@media (max-width: 480px) {
+    .onboarding-header {
+        padding: 16px 20px 0;
+    }
+
+    .onboarding-brand .logo {
+        font-size: 48px;
+    }
+
+    .experience-badges,
+    .get-started-button {
+        max-width: calc(100% - 32px);
+    }
+
+    .experience-badge span {
+        font-size: 16px;
+    }
+}
+/* =========================
+   Language Dropdown Menu
+========================= */
+
+.language-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.language-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 120px;
+    
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 14px;
+    padding: 6px;
+    list-style: none;
+
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.language-menu.show {
+    display: flex;
+}
+
+.lang-option {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 8px 12px;
+    text-align: left;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.lang-option:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Style update for Get Started link button */
+a.get-started-button {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+/* =========================
+   Global Language Dropdown Menu
+========================= */
+
+.language-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.language-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 140px;
+    max-height: 200px; /* يضمن عدم تمدد القائمة بزيادة وتوفير شريط تمرير */
+    overflow-y: auto;
+    
+    background: rgba(20, 20, 20, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 14px;
+    padding: 6px;
+    list-style: none;
+
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+/* Custom Scrollbar for Languages List */
+.language-menu::-webkit-scrollbar {
+    width: 4px;
+}
+
+.language-menu::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.language-menu.show {
+    display: flex;
+}
+
+.lang-option {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 8px 12px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.lang-option:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Style update for Get Started link button */
+a.get-started-button {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+
+
+
+
+/* =========================
+   Login Page Styles
+========================= */
+/* JOVIA Clickable Brand Link */
+.brand-name-link {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111111;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.brand-name-link:hover {
+    opacity: 0.8;
+}
+.login-body {
+    background-color: #F8F6F1;
+    color: #2b2b2b;
+}
+
+.login-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+    background-color: #F8F6F1;
+}
+
+/* Header Adjustments for Login Light Mode */
+.login-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px;
+}
+
+.login-header .header-glass-left {
+    background: rgba(235, 232, 225, 0.65);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.login-header .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111111;
+    letter-spacing: 2px;
+}
+
+.login-header .language-button {
+    background: rgba(235, 232, 225, 0.65);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: #2b2b2b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Container & Typography */
+.login-container {
+    width: 440px;
+    max-width: calc(100% - 32px);
+    margin: 10px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-title-group {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.welcome-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: #222222;
+    letter-spacing: 1px;
+}
+
+.jordan-flag {
+    font-size: 28px;
+    vertical-align: middle;
+}
+
+.login-description {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #555555;
+    margin-top: 4px;
+}
+
+/* Card & Form */
+.login-card {
+    width: 100%;
+    background: rgba(240, 238, 232, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 24px;
+    padding: 28px 24px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid #dcd8cf;
+    background: #e2ded7;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #333333;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #8c8880;
+}
+
+.form-group input:focus {
+    border-color: #bd4c39;
+}
+
+.password-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #555555;
+}
+
+.password-toggle svg {
+    width: 18px;
+    height: 18px;
+    stroke: #555555;
+}
+
+.forgot-wrapper {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.forgot-password {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #222222;
+    text-decoration: underline;
+}
+
+/* Main Action Button */
+.login-submit-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 24px;
+    background: #bd4c39;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(189, 76, 57, 0.25);
+    transition: background-color 0.2s ease;
+}
+
+.login-submit-button:hover {
+    background-color: #a8402f;
+}
+
+/* Divider */
+.social-divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 28px 0 20px;
+}
+
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background-color: #777777;
+}
+
+.divider-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #444444;
+}
+
+/* Social Buttons */
+.social-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 11px;
+    border-radius: 12px;
+    border: 1px solid #d5d0c5;
+    background: #dcd8cf;
+    color: #333333;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.social-button:hover {
+    background: #d2cebf;
+}
+
+.social-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Bottom Text */
+.signup-text {
+    margin-top: 28px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    color: #333333;
+}
+
+.signup-text a {
+    color: #222222;
+    font-weight: 700;
+    text-decoration: underline;
+}
+/* =========================
+   Custom Select Box Styles
+========================= */
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-wrapper select {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid #dcd8cf;
+    background: #e2ded7;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #333333;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2033333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+}
+
+.select-wrapper select:focus {
+    border-color: #bd4c39;
+}
+
+
+
+/* =========================
+   place-details.html Styles & Interactive Wave
+========================= */
+
+.smart-trip-page {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #F8F6F1;
+    padding-bottom: 120px;
+}
+
+.smart-trip-hero {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-controls {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    z-index: 10;
+}
+
+/* Interactive & Animated Wave */
+.interactive-wave-container {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.animated-wave-svg {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease;
+}
+
+.wave-path-1 {
+    fill: #F8F6F1;
+    animation: waveMotion 6s ease-in-out infinite alternate;
+}
+
+@keyframes waveMotion {
+    0% {
+        d: path("M0,32L60,42.7C120,53,240,75,360,80C480,85,600,75,720,58.7C840,43,960,21,1080,21.3C1200,21,1320,43,1380,53.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z");
+    }
+    100% {
+        d: path("M0,64L60,53.3C120,43,240,21,360,21.3C480,21,600,43,720,58.7C840,75,960,85,1080,80C1200,75,1320,53,1380,42.7L1440,32L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z");
+    }
+}
+
+.interactive-wave-container:hover .animated-wave-svg {
+    transform: scaleY(1.15);
+}
+
+/* Page Container & Cards */
+.smart-trip-container {
+    width: 440px;
+    max-width: calc(100% - 32px);
+    margin: -10px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    z-index: 5;
+}
+
+.page-main-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #222222;
+}
+
+.trip-card {
+    background: rgba(243, 240, 234, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.step-badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #bd4c39;
+    color: #ffffff;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.step-title-group {
+    flex: 1;
+}
+
+.step-title-group h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #222222;
+    line-height: 1;
+}
+
+.step-title-group p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: #777777;
+    margin-top: 4px;
+}
+
+.header-icon-emoji {
+    font-size: 22px;
+}
+
+/* Budget Buttons */
+.budget-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.budget-btn {
+    padding: 10px 4px;
+    border-radius: 12px;
+    border: 1px solid #dcd8cf;
+    background: #e2ded7;
+    color: #333333;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.budget-btn.active {
+    background: #bd4c39;
+    color: #ffffff;
+    border-color: #bd4c39;
+}
+
+/* Custom Budget Input */
+.custom-budget-container {
+    margin-top: 14px;
+    width: 100%;
+}
+
+.custom-budget-container input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid #dcd8cf;
+    background: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222222;
+    outline: none;
+}
+
+.trip-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.input-pill-wrapper {
+    display: flex;
+    align-items: center;
+    background: #e2ded7;
+    border: 1px solid #dcd8cf;
+    border-radius: 12px;
+    padding: 6px 12px;
+}
+
+.pill-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #222222;
+    text-align: right;
+    width: 50px;
+}
+
+.pill-input.text-pill {
+    width: 100px;
+    text-align: center;
+}
+
+.unit-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #555555;
+    margin-left: 4px;
+}
+
+/* Interests Grid */
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.interest-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px solid #dcd8cf;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #222222;
+    cursor: pointer;
+    background: #e2ded7;
+    transition: all 0.2s ease;
+}
+
+.interest-pill.adventure   { background: #e0e5d8; }
+.interest-pill.food        { background: #fbeae1; }
+.interest-pill.history     { background: #e1e8f0; }
+.interest-pill.nature      { background: #e2e8db; }
+.interest-pill.culture     { background: #f4e8e1; }
+.interest-pill.relaxation  { background: #e3f0f2; }
+.interest-pill.photography { background: #efe8f4; }
+.interest-pill.stargazing  { background: #e5e7f2; }
+.interest-pill.shopping    { background: #f7ebe1; }
+.interest-pill.wellness    { background: #e4f2eb; }
+
+.interest-pill.active {
+    border-color: #bd4c39;
+    box-shadow: 0 0 0 2px #bd4c39;
+    font-weight: 700;
+}
+
+/* Main Action Button */
+.generate-trip-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    background: #bd4c39;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(189, 76, 57, 0.25);
+}
+
+/* Bottom Navigation Bar Fix */
+.bottom-navigation {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: calc(100% - 32px);
+    max-width: 440px;
+
+    background: rgba(245, 243, 238, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 10px 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #777777;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.nav-icon {
+    width: 22px;
+    height: 22px;
+    stroke: #777777;
+}
+
+.nav-item.active,
+.nav-item:hover {
+    color: #bd4c39;
+}
+
+.nav-item.active .nav-icon,
+.nav-item:hover .nav-icon {
+    stroke: #bd4c39;
+}
+/* =========================
+   Interactive Interest Cards & Animations
+========================= */
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.interest-pill {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 16px;
+    border-radius: 16px;
+    border: 1.5px solid rgba(0, 0, 0, 0.08);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #222222;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    outline: none;
+    user-select: none;
+}
+
+/* Specific Aesthetic Colors */
+.interest-pill.adventure   { background: #e2e8da; }
+.interest-pill.food        { background: #fcece3; }
+.interest-pill.history     { background: #e3ebf3; }
+.interest-pill.nature      { background: #e4eadc; }
+.interest-pill.culture     { background: #f7ede5; }
+.interest-pill.relaxation  { background: #e5f3f5; }
+.interest-pill.photography { background: #f2ebf7; }
+.interest-pill.stargazing  { background: #e7e9f5; }
+.interest-pill.shopping    { background: #f9ede3; }
+.interest-pill.wellness    { background: #e6f4ed; }
+
+/* Hover Bounce Effect */
+.interest-pill:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.interest-pill:hover .interest-icon {
+    transform: scale(1.2) rotate(6deg);
+}
+
+.interest-icon {
+    font-size: 20px;
+    transition: transform 0.25s ease;
+}
+
+/* Active Selected State with Glow and Bounce */
+.interest-pill.active {
+    border-color: #bd4c39;
+    background: #ffffff;
+    box-shadow: 0 10px 22px rgba(189, 76, 57, 0.2), 0 0 0 2px #bd4c39;
+    color: #bd4c39;
+    font-weight: 700;
+    transform: translateY(-2px) scale(1.03);
+    animation: pillPulse 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pillPulse {
+    0% { transform: scale(0.94); }
+    50% { transform: scale(1.06); }
+    100% { transform: scale(1.03); }
+}
+
+/* Checkmark Badge */
+.check-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 22px;
+    height: 22px;
+    background: #bd4c39;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0) rotate(-45deg);
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 3px 8px rgba(189, 76, 57, 0.4);
+}
+
+.interest-pill.active .check-badge {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+
+
+
+
+/* =========================
+   Home Container & Responsive Fix
+========================= */
+
+.home-page {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #F8F6F1;
+    padding-bottom: 160px !important;
+}
+
+.home-container {
+    width: 440px;
+    max-width: calc(100% - 32px);
+    margin: -10px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    z-index: 5;
+}
+
+.itinerary-header {
+    margin-bottom: 4px;
+}
+
+.itinerary-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #222222;
+    line-height: 1.2;
+}
+
+.itinerary-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: #555555;
+    margin-top: 2px;
+}
+
+/* Card Styling Fix */
+.itinerary-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 16px;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.itinerary-card.day-1 { background: #fbeee6; }
+.itinerary-card.day-2 { background: #ede8df; }
+.itinerary-card.day-3 { background: #e8edf2; }
+
+.itinerary-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.card-thumb-wrapper {
+    width: 95px;
+    height: 105px;
+    border-radius: 18px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #e2ded7;
+}
+
+.card-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-details {
+    flex: 1;
+}
+
+.card-details h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 6px;
+}
+
+.itinerary-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.itinerary-bullets li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: #444444;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.diamond-icon {
+    font-size: 11px;
+    color: #333333;
+}
+
+.arrow-indicator {
+    font-size: 22px;
+    color: #333333;
+    font-weight: 300;
+    padding-right: 4px;
+}
+
+/* Roadmap Green Button */
+.roadmap-btn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 10px;
+    background: #68735b;
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    box-shadow: 0 6px 20px rgba(104, 115, 91, 0.25);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.roadmap-btn:hover {
+    background: #5a644e;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   Hero Header Spacing Fix
+========================= */
+
+.smart-trip-hero {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-controls {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    z-index: 10;
+}
+
+.home-container {
+    width: 440px;
+    max-width: calc(100% - 32px);
+    margin: 16px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    z-index: 5;
+}
+
+
+
+
+
+/* =========================
+   Nashmy Exact Figma Matching
+========================= */
+
+.nashmy-page {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #F8F6F1;
+    padding-bottom: 190px !important;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Header & Glass Pills */
+.nashmy-header-wrapper {
+    position: relative;
+    width: 100%;
+    height: 140px;
+}
+
+.nashmy-top-bar {
+    width: 440px;
+    max-width: calc(100% - 32px);
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.brand-pill-glass, .lang-pill-glass {
+    background: rgba(235, 225, 215, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: none !important; /* إلغاء الإطار الأسود الداكن */
+    border-radius: 999px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.brand-link {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #222222;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.header-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.lang-pill-glass {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: #444444;
+    cursor: pointer;
+    background: rgba(235, 225, 215, 0.7);
+}
+
+.globe-icon {
+    width: 18px;
+    height: 18px;
+    stroke: #444444;
+}
+
+/* SVG Curved Waves Top & Bottom */
+.top-wave-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.top-wave-svg svg, .bottom-wave-svg svg {
+    width: 100%;
+    height: 100%;
+}
+
+.bottom-wave-svg {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Chat Stream Container */
+.chat-container {
+    width: 440px;
+    max-width: calc(100% - 32px);
+    margin: 10px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    z-index: 5;
+}
+
+.chat-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+.user-row {
+    justify-content: flex-end;
+}
+
+.ai-row {
+    justify-content: flex-start;
+}
+
+.chat-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Terracotta & Beige Bubbles */
+.user-bubble {
+    background: #B47C53;
+    color: #FFFFFF;
+    padding: 16px 20px;
+    border-radius: 24px;
+    max-width: 78%;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1.35;
+    box-shadow: 0 4px 15px rgba(180, 124, 83, 0.15);
+}
+
+.ai-bubble {
+    background: #EADECE;
+    color: #222222;
+    padding: 16px 20px;
+    border-radius: 24px;
+    max-width: 78%;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+/* Floating Input Bar */
+.nashmy-input-bar {
+    position: fixed;
+    bottom: 82px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: calc(100% - 32px);
+    max-width: 440px;
+
+    background: #EADECE;
+    border-radius: 999px;
+    padding: 8px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    z-index: 1000;
+}
+
+.nashmy-text-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 6px 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #222222;
+    letter-spacing: 0.5px;
+}
+
+.nashmy-text-input::placeholder {
+    color: #444444;
+}
+
+.input-btn {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    color: #222222;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mic-icon {
+    width: 22px;
+    height: 22px;
+    stroke: #222222;
+}
+/* =========================
+   Dynamic Animated Waves Fix
+========================= */
+
+/* Top Wave Container */
+.top-wave-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 170px; /* زيادة الارتفاع لإعطاء عمق أكبر */
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Bottom Wave Container */
+.bottom-wave-svg {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* رفعه للأعلى قليلاً لتغطية المساحة بجمالية */
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.top-wave-svg svg, .bottom-wave-svg svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* التموج المتحرك والانسيابي */
+.top-wave-svg path, .bottom-wave-svg path {
+    transform-origin: center;
+    animation: waveMotion 8s ease-in-out infinite alternate;
+}
+
+.bottom-wave-svg path {
+    animation-duration: 10s;
+    animation-delay: -2s;
+}
+
+/* أنيميشن الحركة الانسيابية للتموجات */
+@keyframes waveMotion {
+    0% {
+        transform: scaleY(1) translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: scaleY(1.15) translateY(-6px) rotate(1deg);
+    }
+    100% {
+        transform: scaleY(0.95) translateY(4px) rotate(-1deg);
+    }
+}
+
+
+
+
+/* =========================
+   Profile Page Exact Styling
+========================= */
+
+.profile-page {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #F8F6F1;
+    padding: 16px 20px 140px;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.profile-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+/* User Card Header */
+.profile-user-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.user-meta-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-user-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-display-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #222222;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.user-email-address {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #888888;
+    margin: 2px 0 0;
+}
+
+.profile-quick-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.action-circle-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    color: #444444;
+    position: relative;
+    text-decoration: none;
+}
+
+.action-circle-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: #444444;
+}
+
+.action-circle-btn.has-unread::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 7px;
+    height: 7px;
+    background-color: #E74C3C;
+    border-radius: 50%;
+}
+
+/* Section Title */
+.profile-section {
+    margin-bottom: 24px;
+}
+
+.profile-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 14px;
+}
+
+/* Upcoming Trip Cards */
+.upcoming-trip-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.upcoming-trip-card.accent-brown {
+    border-left: 12px solid #C46D19;
+}
+
+.upcoming-trip-card.accent-teal {
+    border-left: 12px solid #0088A8;
+}
+
+.trip-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.trip-title-group h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #222222;
+    margin: 0;
+}
+
+.trip-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #777777;
+    margin: 3px 0 0;
+}
+
+.trip-status-tag {
+    background: #FDF3E3;
+    color: #D28C2B;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.trip-tags-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.info-pill {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.calendar-pill, .time-pill {
+    background: #F8F6F1;
+    color: #555555;
+}
+
+.budget-pill {
+    background: #E8F8EE;
+    color: #27AE60;
+    font-weight: 600;
+}
+
+/* View Plan Dark Button */
+.view-plan-dark-btn {
+    display: block;
+    width: 100%;
+    background: #111625;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 999px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+/* Past Trip Log */
+.past-trip-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.past-trip-item {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.past-trip-icon {
+    width: 38px;
+    height: 38px;
+    background: #EBF3F5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.past-trip-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: #5A8290;
+}
+
+.past-trip-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #222222;
+    margin: 0;
+}
+
+.past-trip-info p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    color: #888888;
+    margin: 2px 0 0;
+}
+
+.arrow-right {
+    margin-left: auto;
+    color: #AAAAAA;
+    font-size: 18px;
+}
+
+.show-more-dark-btn {
+    display: block;
+    width: 100%;
+    background: #111625;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 0;
+    border-radius: 999px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Footer Log Out & Help Links */
+.profile-footer-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 24px;
+}
+
+.logout-link-btn {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    color: #C85A48;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.help-support-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #888888;
+    text-decoration: none;
+}
+
+
+
+/* Past Trip Interactive Hover */
+.past-trip-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.past-trip-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Splash / Landing Page Styles
+========================= */
+
+.splash-body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #F8F6F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+}
+
+.splash-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.splash-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: #1A1A1A;
+    letter-spacing: 2px;
+    margin: 0;
+    animation: logoAppear 1.2s ease-out forwards;
+}
+
+/* تأثير ظهور وتكبير خفيف للشعار */
+@keyframes logoAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* أثر الاختفاء عند التحويل للصفحة التالية */
+.splash-body.fade-out {
+    opacity: 0;
+}

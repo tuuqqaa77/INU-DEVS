@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOVIA - Place Details</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+    <main class="smart-trip-page">
+
+        <!-- Header Hero Banner with Animated Interactive Wave -->
+        <header class="smart-trip-hero">
+            <img src="../assets/images/Image 22.jpeg" alt="Jordan Landscape" class="hero-bg-img" onerror="this.src='Image 22.jpeg'">
+
+            <div class="hero-controls">
+                <div class="brand-area header-glass-left">
+                    <a href="onboarding.html" class="brand-name-link">JOVIA</a>
+                    <a href="nashmy.html" class="avatar-link" title="Chat with Nashmi">
+                        <img class="profile-avatar" src="../assets/images/avatar.png" alt="Nashmi" onerror="this.src='avatar.png'">
+                    </a>
+                </div>
+
+                <!-- Global Language Dropdown -->
+                <div class="language-dropdown-wrapper">
+                    <button class="language-button" id="langDropdownBtn" type="button">
+                        <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path>
+                        </svg>
+                        <span id="currentLang">English</span>
+                    </button>
+
+                    <ul class="language-menu" id="langMenu">
+                        <li><button type="button" class="lang-option" data-lang="English">English</button></li>
+                        <li><button type="button" class="lang-option" data-lang="العربية">العربية</button></li>
+                        <li><button type="button" class="lang-option" data-lang="Español">Español</button></li>
+                        <li><button type="button" class="lang-option" data-lang="Français">Français</button></li>
+                        <li><button type="button" class="lang-option" data-lang="Deutsch">Deutsch</button></li>
+                        <li><button type="button" class="lang-option" data-lang="Italiano">Italiano</button></li>
+                        <li><button type="button" class="lang-option" data-lang="Русский">Русский</button></li>
+                        <li><button type="button" class="lang-option" data-lang="中文">中文</button></li>
+                        <li><button type="button" class="lang-option" data-lang="日本語">日本語</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Interactive Animated Curved Wave -->
+            <div class="interactive-wave-container">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="animated-wave-svg">
+                    <path d="M0,32L60,42.7C120,53,240,75,360,80C480,85,600,75,720,58.7C840,43,960,21,1080,21.3C1200,21,1320,43,1380,53.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z" class="wave-path-1"></path>
+                </svg>
+            </div>
+        </header>
+
+        <!-- Main Content Container -->
+        <div class="smart-trip-container">
+
+            <h1 class="page-main-title">Plan Your Smart Trip</h1>
+
+            <!-- Step 1: Budget -->
+            <div class="trip-card">
+                <div class="card-header">
+                    <div class="step-badge">1</div>
+                    <div class="step-title-group">
+                        <h2>Budget</h2>
+                        <p>Tell us how much you are planning to spend?</p>
+                    </div>
+                    <span class="header-icon-emoji">👛</span>
+                </div>
+
+                <div class="budget-options">
+                    <button type="button" class="budget-btn" data-val="50">50 JOD</button>
+                    <button type="button" class="budget-btn" data-val="100">100 JOD</button>
+                    <button type="button" class="budget-btn" data-val="250">250 JOD</button>
+                    <button type="button" class="budget-btn active custom-toggle-btn" id="customBudgetBtn">+500 JOD</button>
+                </div>
+
+                <!-- Custom Budget Input -->
+                <div class="custom-budget-container" id="customBudgetWrapper">
+                    <input type="number" id="customBudgetInput" value="700" placeholder="Enter custom amount in JOD">
+                </div>
+            </div>
+
+            <!-- Step 2: Trip Details -->
+            <div class="trip-card">
+                <div class="card-header">
+                    <div class="step-badge">2</div>
+                    <div class="step-title-group">
+                        <h2>Trip Details</h2>
+                        <p>How many days? And where do you start?</p>
+                    </div>
+                    <span class="header-icon-emoji">💎</span>
+                </div>
+
+                <div class="trip-details-list">
+                    <div class="detail-row">
+                        <label for="daysInput">Number Of Days</label>
+                        <div class="input-pill-wrapper">
+                            <input type="number" id="daysInput" class="pill-input" value="19" min="1" max="60">
+                            <span class="unit-tag">Days</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-row">
+                        <label for="startPointInput">Starting Point/Arrival</label>
+                        <div class="input-pill-wrapper">
+                            <input type="text" id="startPointInput" class="pill-input text-pill" value="Amman" placeholder="City / Airport">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Your Interests (Clean & Unique 10 Interests) -->
+            <div class="trip-card">
+                <div class="card-header">
+                    <div class="step-badge">3</div>
+                    <div class="step-title-group">
+                        <h2>Your Interests</h2>
+                        <p>What kind of experiences do you enjoy?</p>
+                    </div>
+                    <span class="header-icon-emoji">📍</span>
+                </div>
+
+                <div class="interests-grid">
+                    <button type="button" class="interest-pill adventure">
+                        <span class="interest-icon">🏕️</span>
+                        <span>Adventure</span>
+                        <span class="check-badge">✓</span>
+                    </button>
+                    <button type="button" class="interest-pill food">
+                        <span class="interest-icon">🍽️</span>
+                        <span>Local Food</span>
+                        <span class="check-badge">✓</span>
+                    </button>
+                    <button type="button" class="interest-pill history">
+                        <span class="interest-icon">🏛️</span>
+                        <span>History</span>
+                        <span class="check-badge">✓</span>
+                    </button>
+                    <button type="button" class="interest-pill nature">
+                        <span class="interest-icon">🌿</span>
+                        <span>Nature</span>
+                        <span class="check-badge">✓</span>
+                    </button>
+                    <button type="button" class="interest-pill culture">
+                        <span class="interest-icon">🎭</span>
+                        <span>Culture</span>
+                        <span class="check-badge">✓</span>
+                    </button>
+                    <button type="button" class="interest-pill relaxation">
+                        <span class="interest-icon">🏖️</span>
+                        <span>Relaxation</span>
+                        <span class="check-badge">✓</span>
+                    </button>
+                    <button type="button" class="interest-pill photography">
+                        <span class="interest-icon">📸</span>
+                        <span>Photography</span>
+                        <span class="check-badge">✓</span>
+                    </button>
+                    <button type="button" class="interest-pill stargazing">
+                        <span class="interest-icon">🌌</span>
+                        <span>Stargazing</span>
+                        <span class="check-badge">✓</span>
+                    </button>
+                    <button type="button" class="interest-pill shopping">
+                        <span class="interest-icon">🛍️</span>
+                        <span>Souvenirs</span>
+                        <span class="check-badge">✓</span>
+                    </button>
+                    <button type="button" class="interest-pill wellness">
+                        <span class="interest-icon">🧘‍♂️</span>
+                        <span>Spa & Dead Sea</span>
+                        <span class="check-badge">✓</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Action Button -->
+            <button type="button" class="generate-trip-btn">
+                Generate My Trip ✨
+            </button>
+
+        </div>
+
+        <!-- Fixed Bottom Navigation Bar -->
+        <nav class="bottom-navigation">
+            <a href="profile.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Profile</span>
+            </a>
+
+            <a href="home.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>Home</span>
+            </a>
+
+            <a href="smart-map.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                    <line x1="8" y1="2" x2="8" y2="18"></line>
+                    <line x1="16" y1="6" x2="16" y2="22"></line>
+                </svg>
+                <span>Map</span>
+            </a>
+
+            <!-- Know JORDAN with 7-Pointed Jordan Star -->
+            <a href="know-jordan.html" class="nav-item active">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <polygon points="12,2 14.1,7.2 19.8,6.1 17.5,11.3 21.8,15 16.1,16.2 15.2,21.9 12,17.2 8.8,21.9 7.9,16.2 2.2,15 6.5,11.3 4.2,6.1 9.9,7.2"></polygon>
+                </svg>
+                <span>Know JORDAN</span>
+            </a>
+        </nav>
+
+    </main>
+
+    <!-- Interactive Script -->
+    <script>
+        // Language Dropdown Toggle
+        const langDropdownBtn = document.getElementById('langDropdownBtn');
+        const langMenu = document.getElementById('langMenu');
+        const currentLang = document.getElementById('currentLang');
+
+        langDropdownBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langMenu.classList.toggle('show');
+        });
+
+        document.querySelectorAll('.lang-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                currentLang.textContent = e.target.getAttribute('data-lang');
+                langMenu.classList.remove('show');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            langMenu.classList.remove('show');
+        });
+
+        // Budget Selection & Custom +500 JOD Toggle
+        const budgetBtns = document.querySelectorAll('.budget-btn');
+        const customWrapper = document.getElementById('customBudgetWrapper');
+        const customInput = document.getElementById('customBudgetInput');
+
+        budgetBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                budgetBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                if (btn.id === 'customBudgetBtn') {
+                    customWrapper.style.display = 'block';
+                    customInput.focus();
+                } else {
+                    customWrapper.style.display = 'none';
+                }
+            });
+        });
+
+        // Interests Toggle (Multiple Selection Allowed)
+        document.querySelectorAll('.interest-pill').forEach(pill => {
+            pill.addEventListener('click', () => {
+                pill.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

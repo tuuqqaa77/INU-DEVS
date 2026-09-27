@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JOVIA - Sign Up</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="login-body">
+
+    <main class="login-page">
+
+        <!-- Top Header -->
+        <header class="login-header">
+
+            <!-- Left Group: Glass Container (JOVIA Link + Nashmi Avatar) -->
+<div class="brand-area header-glass-left">
+    <a href="onboarding.html" class="brand-name-link" title="Go to Onboarding">
+        JOVIA
+    </a>
+    <a href="nashmy.html" class="avatar-link" title="Chat with Nashmi">
+        <img class="profile-avatar" src="../assets/images/avatar.png" alt="Nashmi Profile">
+    </a>
+</div>
+
+            <!-- Global Language Dropdown -->
+            <div class="language-dropdown-wrapper">
+                <button class="language-button" id="langDropdownBtn" type="button">
+                    <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path>
+                    </svg>
+                    <span id="currentLang">English</span>
+                </button>
+
+                <ul class="language-menu" id="langMenu">
+                    <li><button type="button" class="lang-option" data-lang="English">English</button></li>
+                    <li><button type="button" class="lang-option" data-lang="العربية">العربية</button></li>
+                    <li><button type="button" class="lang-option" data-lang="Español">Español</button></li>
+                    <li><button type="button" class="lang-option" data-lang="Français">Français</button></li>
+                    <li><button type="button" class="lang-option" data-lang="Deutsch">Deutsch</button></li>
+                    <li><button type="button" class="lang-option" data-lang="Italiano">Italiano</button></li>
+                    <li><button type="button" class="lang-option" data-lang="Русский">Русский</button></li>
+                    <li><button type="button" class="lang-option" data-lang="中文">中文</button></li>
+                    <li><button type="button" class="lang-option" data-lang="日本語">日本語</button></li>
+                </ul>
+            </div>
+
+        </header>
+
+        <!-- Sign Up Container -->
+        <div class="login-container">
+
+            <div class="login-title-group">
+                <h1 class="welcome-heading">Create Your Account</h1>
+                <p class="login-description">
+                    Join JOVIA to plan your smart trip<br>to Jordan
+                </p>
+            </div>
+
+            <!-- Form Card -->
+            <div class="login-card">
+                <form class="login-form">
+
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" placeholder="Enter your full name">
+                    </div>
+
+                    <!-- Email / Phone -->
+                    <div class="form-group">
+                        <label for="signup-email">Email or Phone Number</label>
+                        <input type="text" id="signup-email" name="signup-email" placeholder="Enter your Email or Phone Number">
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <div class="password-field">
+                            <input type="password" id="signup-password" name="signup-password" placeholder="Enter password (min. 8 characters)">
+                            <button type="button" class="password-toggle" id="togglePasswordBtn1" aria-label="Show password">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="form-group">
+                        <label for="confirm-password">Re-Enter Password</label>
+                        <div class="password-field">
+                            <input type="password" id="confirm-password" name="confirm-password" placeholder="Enter password (min. 8 characters)">
+                            <button type="button" class="password-toggle" id="togglePasswordBtn2" aria-label="Show password">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Currency Selection -->
+                    <div class="form-group">
+                        <label for="currency">Currency</label>
+                        <div class="select-wrapper">
+                            <select id="currency" name="currency">
+                                <option value="" disabled selected>Select Currency</option>
+                                <option value="jod">JOD - Jordanian Dinar</option>
+                                <option value="usd">USD - US Dollar</option>
+                                <option value="eur">EUR - Euro</option>
+                                <option value="gbp">GBP - British Pound</option>
+                                <option value="sar">SAR - Saudi Riyal</option>
+                                <option value="aed">AED - UAE Dirham</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button inside Card (Matching Screenshot layout) -->
+                    <button type="submit" class="login-submit-button">Sign Up</button>
+
+                    <!-- Divider -->
+                    <div class="social-divider">
+                        <span class="divider-line"></span>
+                        <p class="divider-text">Or continue with</p>
+                        <span class="divider-line"></span>
+                    </div>
+
+                    <!-- Social Media Options -->
+                    <div class="social-buttons">
+                        <button type="button" class="social-button google-button">
+                            <svg class="social-icon" viewBox="0 0 24 24">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                            </svg>
+                            <span>Google</span>
+                        </button>
+
+                        <button type="button" class="social-button apple-button">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.67-.82 1.12-1.96.99-3.1-.97.04-2.14.65-2.83 1.46-.62.72-1.16 1.88-1.01 3 .09.01.2.02.31.02 1.09 0 2.22-.56 2.54-1.38z"/>
+                            </svg>
+                            <span>Apple</span>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Sign In Navigation Link -->
+            <p class="signup-text">
+                Already have an account? <a href="login.html">Sign In</a>
+            </p>
+
+        </div>
+
+    </main>
+
+    <!-- Interactive Script -->
+    <script>
+        // Language Dropdown Toggle
+        const langDropdownBtn = document.getElementById('langDropdownBtn');
+        const langMenu = document.getElementById('langMenu');
+        const currentLang = document.getElementById('currentLang');
+
+        langDropdownBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langMenu.classList.toggle('show');
+        });
+
+        document.querySelectorAll('.lang-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                currentLang.textContent = e.target.getAttribute('data-lang');
+                langMenu.classList.remove('show');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            langMenu.classList.remove('show');
+        });
+
+        // Passwords Visibility Toggle
+        function setupPasswordToggle(btnId, inputId) {
+            const btn = document.getElementById(btnId);
+            const input = document.getElementById(inputId);
+            if(btn && input) {
+                btn.addEventListener('click', () => {
+                    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                    input.setAttribute('type', type);
+                });
+            }
+        }
+
+        setupPasswordToggle('togglePasswordBtn1', 'signup-password');
+        setupPasswordToggle('togglePasswordBtn2', 'confirm-password');
+    </script>
+
+</body>
+
+</html>
