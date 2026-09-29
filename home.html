@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOVIA - Plan Your Smart Trip</title>
+
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <div class="app-viewport-wrapper">
+        <div class="mobile-frame">
+            
+            <!-- Curved & Separate Glass Buttons Header -->
+            <header class="planner-hero-header">
+                
+                <div class="hero-separate-nav">
+                    <!-- Glass Logo Badge -->
+                    <div class="glass-badge logo-badge">
+                        <span class="hero-logo">JOVIA</span>
+                    </div>
+                    
+                    <!-- Glass Nashmy Avatar Button -->
+                    <a href="nashmy.html" class="glass-badge nashmy-avatar-btn" title="Talk to Nashmy AI">
+                        <img src="/images/nashmy.jpg" alt="Nashmy AI">
+                    </a>
+
+                    <!-- Glass Language Button -->
+                    <button class="glass-badge lang-switch-btn" id="langBtn" onclick="toggleLanguage()">
+                        <i class="fas fa-globe"></i>
+                        <span id="langText">English</span>
+                    </button>
+                </div>
+
+                <!-- Animated Wave at Bottom -->
+                <div class="wave-container">
+                    <svg class="animated-wave" viewBox="0 24 150 28" preserveAspectRatio="none">
+                        <defs>
+                            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                        </defs>
+                        <g class="parallax-waves">
+                            <use href="#gentle-wave" x="48" y="0" fill="rgba(250, 248, 245, 0.3)" />
+                            <use href="#gentle-wave" x="48" y="3" fill="rgba(250, 248, 245, 0.6)" />
+                            <use href="#gentle-wave" x="48" y="5" fill="#FAF8F5" />
+                        </g>
+                    </svg>
+                </div>
+
+            </header>
+
+            <!-- Main Form Container -->
+            <main class="planner-content">
+                <h2 class="page-title">Plan Your Smart Trip</h2>
+
+                <!-- Step 1: Budget -->
+                <section class="planner-card">
+                    <div class="card-header">
+                        <div class="step-title">
+                            <span class="step-number">1</span>
+                            <div>
+                                <h3>Budget</h3>
+                                <p class="step-desc">Tell us: how much are you planning to spend?</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-wallet card-icon"></i>
+                    </div>
+
+                    <div class="budget-options">
+                        <button type="button" class="budget-btn" data-value="50">50 JOD</button>
+                        <button type="button" class="budget-btn" data-value="100">100 JOD</button>
+                        <button type="button" class="budget-btn active" data-value="250">250 JOD</button>
+                        <button type="button" class="budget-btn custom-budget-btn" id="customBudgetBtn" data-value="500">+500 JOD</button>
+                    </div>
+                </section>
+
+                <!-- Step 2: Trip Details -->
+                <section class="planner-card">
+                    <div class="card-header">
+                        <div class="step-title">
+                            <span class="step-number">2</span>
+                            <div>
+                                <h3>Trip Details</h3>
+                                <p class="step-desc">How many days? And where do you start?</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-map-marked-alt card-icon"></i>
+                    </div>
+
+                    <div class="details-rows">
+                        <!-- Number Of Days Interactive Select -->
+                        <div class="detail-row">
+                            <span class="detail-label">Number Of Days</span>
+                            <div class="detail-select-wrapper">
+                                <select id="daysSelect" class="detail-select-pill">
+                                    <option value="1">1 Day</option>
+                                    <option value="2">2 Days</option>
+                                    <option value="3" selected>3 Days</option>
+                                    <option value="4">4 Days</option>
+                                    <option value="5">5 Days</option>
+                                    <option value="7">7 Days</option>
+                                    <option value="10">10 Days</option>
+                                </select>
+                                <i class="fas fa-chevron-right select-arrow"></i>
+                            </div>
+                        </div>
+
+                        <!-- Starting Point Interactive Select -->
+                        <div class="detail-row">
+                            <span class="detail-label">Starting Point/Arrival</span>
+                            <div class="detail-select-wrapper">
+                                <select id="startingPointSelect" class="detail-select-pill">
+                                    <option value="Amman" selected>Amman</option>
+                                    <option value="Aqaba">Aqaba</option>
+                                    <option value="Irbid">Irbid</option>
+                                    <option value="Petra">Petra (Wadi Musa)</option>
+                                    <option value="Jerash">Jerash</option>
+                                    <option value="Madaba">Madaba</option>
+                                </select>
+                                <i class="fas fa-chevron-right select-arrow"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 3: Your Interests -->
+                <section class="planner-card">
+                    <div class="card-header">
+                        <div class="step-title">
+                            <span class="step-number">3</span>
+                            <div>
+                                <h3>Your Interests</h3>
+                                <p class="step-desc">What kind of experiences do you enjoy?</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-map-pin card-icon"></i>
+                    </div>
+
+                    <div class="interests-grid">
+                        <button type="button" class="interest-chip active">
+                            <i class="fas fa-hiking"></i>
+                            <span>Adventure</span>
+                        </button>
+                        <button type="button" class="interest-chip">
+                            <i class="fas fa-utensils"></i>
+                            <span>Local Food</span>
+                        </button>
+                        <button type="button" class="interest-chip">
+                            <i class="fas fa-landmark"></i>
+                            <span>History</span>
+                        </button>
+                        <button type="button" class="interest-chip">
+                            <i class="fas fa-tree"></i>
+                            <span>Nature</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Generate CTA Button -->
+                <div class="planner-action">
+                    <a href="smart-map.html" class="btn-generate-trip">
+                        Generate My Trip <i class="fas fa-sparkles"></i>
+                    </a>
+                </div>
+            </main>
+
+            <!-- Bottom Navigation Bar -->
+            <nav class="bottom-nav">
+                <a href="profile.html" class="nav-item">
+                    <i class="far fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="home.html" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="map.html" class="nav-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Map</span>
+                </a>
+                <a href="know-jordan.html" class="nav-item">
+    <!-- النجمة السباعية الأردنية (7-Pointed Star) -->
+    <svg class="nav-star-icon" viewBox="0 0 24 24">
+        <path d="M 12 2 L 13.95 7.95 L 19.82 5.77 L 16.39 11.01 L 21.75 14.22 L 15.52 14.80 L 16.34 21.01 L 12 16.5 L 7.66 21.01 L 8.48 14.80 L 2.25 14.22 L 7.61 11.01 L 4.18 5.77 L 10.05 7.95 Z" />
+    </svg>
+    <span>Know JORDAN</span>
+</a>
+            </nav>
+
+        </div>
+    </div>
+
+    <!-- Page Interaction Scripts -->
+    <script>
+        // Toggle Budget Buttons & Handle Custom Budget Input
+        const budgetBtns = document.querySelectorAll('.budget-btn');
+        const customBudgetBtn = document.getElementById('customBudgetBtn');
+
+        budgetBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (btn === customBudgetBtn) {
+                    const userAmount = prompt("Enter your budget in JOD (e.g. 750):", "500");
+                    if (userAmount && !isNaN(userAmount) && userAmount.trim() !== "") {
+                        customBudgetBtn.innerText = userAmount.trim() + " JOD";
+                        customBudgetBtn.setAttribute('data-value', userAmount.trim());
+                    } else {
+                        return; // Cancelled or invalid
+                    }
+                }
+                
+                budgetBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // Toggle Interest Chips
+        document.querySelectorAll('.interest-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                chip.classList.toggle('active');
+            });
+        });
+
+        // Toggle Language Display
+        function toggleLanguage() {
+            const langText = document.getElementById('langText');
+            const htmlTag = document.documentElement;
+            
+            if (langText.innerText === 'English') {
+                langText.innerText = 'العربية';
+                htmlTag.setAttribute('dir', 'rtl');
+                htmlTag.setAttribute('lang', 'ar');
+            } else {
+                langText.innerText = 'English';
+                htmlTag.setAttribute('dir', 'ltr');
+                htmlTag.setAttribute('lang', 'en');
+            }
+        }
+    </script>
+</body>
+</html>

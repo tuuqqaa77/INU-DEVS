@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOVIA - Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="login-body">
+
+    <div class="mobile-frame">
+        
+        <!-- الهيدر العلوي -->
+        <div class="login-header">
+            
+            <!-- زر اللغة مع القائمة المنسدلة المباشرة -->
+            <div class="lang-dropdown-container">
+                <button class="top-btn-light" onclick="
+                    const menu = document.getElementById('loginLangMenu');
+                    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+                ">
+                    <i class="fa-solid fa-globe"></i> <span id="current-lang">English</span> <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
+                </button>
+                <div id="loginLangMenu" style="display: none; position: absolute; top: 40px; left: 0; background: white; border: 1px solid #ddd; border-radius: 10px; width: 100px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 100;">
+                    <div style="padding: 8px; text-align: center; cursor: pointer; font-size: 12px; border-bottom: 1px solid #eee;" onclick="document.getElementById('current-lang').innerText='English'; this.parentElement.style.display='none';">English</div>
+                    <div style="padding: 8px; text-align: center; cursor: pointer; font-size: 12px;" onclick="document.getElementById('current-lang').innerText='العربية'; this.parentElement.style.display='none';">العربية</div>
+                </div>
+            </div>
+
+            <!-- أفتار نشمي وشعار JOVIA -->
+            <div class="brand-link">
+                <div class="nashmy-mini-avatar" onclick="alert('الانتقال للمساعد نشمي')" title="المساعد نشمي" style="cursor: pointer;">
+                    <img src="images/nashmy.jpg" alt="Nashmy" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100'">
+                </div>
+                <span class="logo-text" onclick="window.location.href='index.html'" style="cursor: pointer;" title="العودة للرئيسية">JOVIA</span>
+            </div>
+
+        </div>
+
+        <!-- محتوى شاشة تسجيل الدخول -->
+        <div class="login-content">
+            <div class="welcome-title-area">
+                <h2>Welcome to JOVIA ! 🇯🇴</h2>
+                <p>log in to continue exploring Jordan</p>
+            </div>
+
+            <!-- نموذج تسجيل الدخول داخل الكارد الأبيض بدقة -->
+            <div class="login-card">
+                <div class="input-group">
+                    <label>Email or Phone Number</label>
+                    <input type="text" placeholder="Enter your Email or Phone Number">
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <div class="password-wrapper" style="position: relative; width: 100%; display: flex; align-items: center;">
+                        <input type="password" id="passwordInput" placeholder="Enter your Password" style="width: 100%; padding: 10px 35px 10px 14px; background: #f7f7f7; border: 1px solid #e5e5e5; border-radius: 12px; font-size: 12px; outline: none;">
+                        <i class="fa-regular fa-eye-slash toggle-password" id="togglePassword" style="position: absolute; right: 12px; cursor: pointer; color: #888; font-size: 13px;" onclick="
+                            const input = document.getElementById('passwordInput');
+                            const icon = this;
+                            if (input.type === 'password') {
+                                input.type = 'text';
+                                icon.classList.remove('fa-eye-slash');
+                                icon.classList.add('fa-eye');
+                            } else {
+                                input.type = 'password';
+                                icon.classList.remove('fa-eye');
+                                icon.classList.add('fa-eye-slash');
+                            }
+                        "></i>
+                    </div>
+                </div>
+
+                <a href="#" class="forgot-pass" onclick="alert('استعادة كلمة المرور')">Forgot Password?</a>
+            </div>
+
+            <!-- زر Sign In -->
+            <button class="btn-signin" onclick="alert('تم تسجيل الدخول بنجاح')">Sign In</button>
+
+            <div class="divider">
+                <span>Or continue with</span>
+            </div>
+
+            <!-- أزرار الدخول السريع -->
+            <button class="social-btn google-btn" onclick="alert('جاري تسجيل الدخول عبر جوجل')">
+                <i class="fa-brands fa-google" style="color: #ea4335;"></i> Google
+            </button>
+            <button class="social-btn apple-btn" onclick="alert('جاري تسجيل الدخول عبر أبل')">
+                <i class="fa-brands fa-apple"></i> Apple
+            </button>
+
+            <!-- رابط إنشاء حساب -->
+            <p class="signup-text">
+                Don't have an account? <a href="#" onclick="alert('صفحة إنشاء حساب')">Sign Up</a>
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
