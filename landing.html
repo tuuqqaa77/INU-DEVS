@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JOVIA</title>
-  
-  <!-- ربط ملف الـ CSS المنفصل -->
-  <link rel="stylesheet" href="css/landing.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOVIA - Welcome</title>
+
+    <!-- خطوط الهوية الرسمية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- ربط ملف الـ CSS الصحيح -->
+    <link rel="stylesheet" href="css/landing.css">
 </head>
 <body>
 
-  <main>
-    <h1 class="brand-title" onclick="replayAnimation()">JOVIA</h1>
-  </main>
+    <!-- الشاشة الرئيسية للاندنج -->
+    <main class="landing-screen" onclick="navigateToOnboarding()">
+        <div class="brand-container">
+            <h1 class="brand-logo">JOVIA</h1>
+            <p class="brand-subline">TRAVEL &amp; EXPERIENCES</p>
+        </div>
+    </main>
 
-  <!-- ربط ملف الـ JS المنفصل -->
-  <script src="js/landing.js"></script>
+    <!-- كود الانتقال المباشر -->
+    <script>
+        function navigateToOnboarding() {
+            window.location.href = "pages/Onboarding.html";
+        }
+
+        // تحويل تلقائي بعد 2.5 ثانية
+        setTimeout(navigateToOnboarding, 2100);
+    </script>
 </body>
 </html>

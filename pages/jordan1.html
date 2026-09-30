@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOVIA - Know Jordan</title>
+
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS Link الصحيح لمجلد css -->
+  <link rel="stylesheet" href="../css/jordan1.css">
+</head>
+<body>
+
+  <!-- App Wrapper -->
+  <div class="app-container">
+    
+    <!-- Top Header Bar -->
+    <header class="top-header">
+      <div class="left-brand-group">
+        <a href="home.html" class="brand-logo" style="text-decoration: none;">JOVIA</a>
+        
+        <a href="nashmy.html" class="avatar-wrapper" title="Chat with Nashmy AI">
+          <img src="../assets/nashmy.png" alt="Nashmy" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100'">
+        </a>
+      </div>
+
+      <button type="button" class="lang-btn">
+        <i class="fa-solid fa-globe"></i> English
+      </button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="title-section">
+        <h1 class="page-title">Know Jordan</h1>
+        <p class="subtitle-question">What are you in the mood for?</p>
+        <p class="description-text">
+          Explore Jordan's heritage, history, and local life. Select your interests to get personalized recommendations.
+        </p>
+      </div>
+
+      <!-- Categories Grid -->
+      <div class="categories-grid">
+        <div class="category-card" data-category="Nature">
+          <div class="img-wrapper">
+            <img src="../assets/wadi-rum.jpg" alt="Nature" onerror="this.src='../assets/adv&marketH.jpg'">
+          </div>
+          <span class="cat-label">Nature</span>
+        </div>
+
+        <div class="category-card" data-category="Adventure">
+          <div class="img-wrapper">
+            <img src="../assets/ajloun.jpg" alt="Adventure" onerror="this.src='../assets/adv&marketH.jpg'">
+          </div>
+          <span class="cat-label">Adventure</span>
+        </div>
+
+        <div class="category-card" data-category="Food">
+          <div class="img-wrapper">
+            <img src="../assets/rainbow-street.jpg" alt="Food" onerror="this.src='../assets/ammanH.png'">
+          </div>
+          <span class="cat-label">Food</span>
+        </div>
+
+        <div class="category-card" data-category="History">
+          <div class="img-wrapper">
+            <img src="../assets/JARASH 1.jpeg" alt="History" onerror="this.src='../assets/ammanH.png'">
+          </div>
+          <span class="cat-label">History</span>
+        </div>
+
+        <div class="category-card" data-category="Culture">
+          <div class="img-wrapper">
+            <img src="../assets/ammanH.png" alt="Culture">
+          </div>
+          <span class="cat-label">Culture</span>
+        </div>
+
+        <div class="category-card" data-category="Beaches">
+          <div class="img-wrapper">
+            <img src="../assets/seah.png" alt="Beaches">
+          </div>
+          <span class="cat-label">Beaches</span>
+        </div>
+
+        <div class="category-card" data-category="Shopping">
+          <div class="img-wrapper">
+            <img src="../assets/shopping.jpg" alt="Shopping" onerror="this.src='../assets/adv&marketH.jpg'">
+          </div>
+          <span class="cat-label">Shopping</span>
+        </div>
+
+        <div class="category-card" data-category="Local Experiences">
+          <div class="img-wrapper">
+            <img src="../assets/dana.jpg" alt="Local Experiences" onerror="this.src='../assets/ammanH.png'">
+          </div>
+          <span class="cat-label">Local Experiences</span>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <button type="button" class="btn-next" id="nextBtn">NEXT</button>
+    </main>
+
+    <!-- Bottom Navigation Bar مع النجمة السباعية وروابط التطبيق الصحيحة -->
+    <nav class="bottom-nav">
+      <a href="profile.html" class="nav-item">
+        <i class="fa-regular fa-user"></i>
+        <span>Profile</span>
+      </a>
+      <a href="home.html" class="nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="smart-map.html" class="nav-item">
+        <i class="fa-regular fa-compass"></i>
+        <span>Map</span>
+      </a>
+      <a href="know-jordan.html" class="nav-item active">
+        <svg class="seven-star-icon" width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+          <polygon points="10,0.5 11.74,6.4 17.43,4.08 13.90,9.11 19.26,12.11 13.13,12.49 14.12,18.56 10,14 5.88,18.56 6.87,12.49 0.74,12.11 6.10,9.11 2.57,4.08 8.26,6.40"/>
+        </svg>
+        <span>Know JORDAN</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <!-- JavaScript Link الصحيح لمجلد js -->
+  <script src="../js/jordan1.js"></script>
+</body>
+</html>

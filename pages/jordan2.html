@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOVIA - Explore Places</title>
+
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- ملف الـ CSS بالمسار الصحيح لمجلد css -->
+  <link rel="stylesheet" href="../css/jordan2.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Hero Header with Background Image -->
+    <header class="hero-header" id="heroHeader">
+      <div class="top-bar">
+        
+        <!-- مجموعة اليسار: الشعار ونشمي -->
+        <div class="left-brand-group">
+          <a href="../pages/home.html" class="brand-logo text-light" style="text-decoration: none;">JOVIA</a>
+          <a href="../pages/nashmy.html" class="avatar-wrapper" title="Ask Nashmy AI">
+            <img src="../assets/nashmy.png" alt="Nashmy" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100'">
+          </a>
+        </div>
+
+        <button type="button" class="lang-btn glass-btn">
+          <i class="fa-solid fa-globe"></i> English
+        </button>
+      </div>
+
+      <!-- Search Input -->
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Search in Know Jordan...">
+      </div>
+    </header>
+
+    <!-- Main Content Details -->
+    <main class="main-content">
+      
+      <!-- Main Featured Place Card -->
+      <div class="main-place-card" id="mainPlaceCard">
+        <div class="card-header">
+          <h2 class="place-title" id="placeTitle">Church of the Beheading of St. John the Baptist</h2>
+          <button type="button" class="bookmark-btn" id="bookmarkBtn" aria-label="Bookmark">
+            <i class="fa-regular fa-bookmark"></i>
+          </button>
+        </div>
+        
+        <p class="place-sub" id="placeCategory">Religious tourism</p>
+        <p class="place-location" id="placeLocation">
+          <i class="fa-solid fa-location-dot"></i> 
+          <span>Madaba</span> 
+          <span class="rating-text">• 4.8 (2.1k reviews)</span>
+        </p>
+
+        <!-- Quick Action Bar -->
+        <div class="action-bar">
+          <div class="action-item"><i class="fa-regular fa-compass"></i><span>Directions</span></div>
+          <div class="action-item" id="likeBtn"><i class="fa-regular fa-heart"></i><span>Save</span></div>
+          <div class="action-item"><i class="fa-regular fa-paper-plane"></i><span>Share</span></div>
+          <div class="action-item"><i class="fa-solid fa-ellipsis"></i><span>More</span></div>
+        </div>
+
+        <!-- About Section -->
+        <div class="about-section">
+          <h3>About</h3>
+          <p id="placeAbout">A historic church in Madaba established in 1879, famous for its Byzantine-style bell tower overlooking the city...</p>
+        </div>
+      </div>
+
+      <!-- Places Horizontal Carousel / Grid -->
+      <div class="places-carousel-section">
+        <h4 class="section-title">Explore More Sites</h4>
+        <div class="carousel-container" id="carouselContainer">
+          <!-- Dynamically populated via JS from Excel Encyclopedia -->
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Bottom Navigation Bar مع النجمة السباعية وروابط التطبيق الصحيحة -->
+    <nav class="bottom-nav">
+      <a href="../pages/profile.html" class="nav-item">
+        <i class="fa-regular fa-user"></i>
+        <span>Profile</span>
+      </a>
+      <a href="../pages/home.html" class="nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="../pages/smart-map.html" class="nav-item">
+        <i class="fa-regular fa-compass"></i>
+        <span>Map</span>
+      </a>
+      <a href="../jordan1/jordan1.html" class="nav-item active">
+        <svg class="seven-star-icon" width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+          <polygon points="10,0.5 11.74,6.4 17.43,4.08 13.90,9.11 19.26,12.11 13.13,12.49 14.12,18.56 10,14 5.88,18.56 6.87,12.49 0.74,12.11 6.10,9.11 2.57,4.08 8.26,6.40"/>
+        </svg>
+        <span>Know JORDAN</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <!-- ملف الـ JavaScript الصحيح في مجلد js -->
+  <script src="../js/jordan2.js"></script>
+</body>
+</html>

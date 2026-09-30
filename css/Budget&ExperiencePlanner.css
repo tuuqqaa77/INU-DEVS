@@ -1,0 +1,594 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* =========================================================
+   JOVIA - Design Variables & Resets
+   ========================================================= */
+:root {
+  --bg-main: #FAF8F3;
+  --primary-terracotta: #B24C38;
+  --primary-dark: #221510;
+  --text-muted: #7D7571;
+  --card-bg: #FFFFFF;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg-main);
+  font-family: var(--font-sans);
+  color: var(--primary-dark);
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.app-viewport-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* إطار الصفحة المتجاوب بالكامل Full-Width بدون حواف خارجية */
+.mobile-frame {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 100%;
+  background-color: var(--bg-main);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+}
+
+/* =========================================================
+   1. الهيدر وصورة الكرك والأمواج
+   ========================================================= */
+.planner-hero-header {
+  position: relative;
+  width: 100%;
+  height: clamp(230px, 32vh, 320px);
+  background: linear-gradient(180deg, rgba(20, 10, 5, 0.45) 0%, rgba(20, 10, 5, 0.15) 100%),
+              url('../assets/Karak.jpeg') center center / cover no-repeat;
+  padding: 24px 20px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 5;
+}
+
+.hero-separate-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+/* مجموعة اليسار: تجمع JOVIA وبجانبها نشمي في صندوقين منفصلين */
+.left-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* صندوق شعار JOVIA الزجاجي */
+.header-left-brand {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 8px 18px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.header-left-brand:hover {
+  transform: translateY(-1px);
+}
+
+.brand-box {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* زر أفتار نشمي المستقل بجانب الشعار */
+.nashmy-avatar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.nashmy-avatar-btn:hover {
+  transform: scale(1.08);
+}
+
+.nashmy-avatar-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* زر وقائمة اللغات */
+.lang-dropdown-container {
+  position: relative;
+}
+
+.top-btn {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 100;
+  min-width: 110px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  animation: fadeInMenu 0.2s ease;
+}
+
+.lang-menu.hidden-menu {
+  display: none !important;
+}
+
+.lang-menu div {
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: center;
+}
+
+.lang-menu div:hover {
+  background-color: #F4EBE1;
+  color: var(--primary-terracotta);
+}
+
+@keyframes fadeInMenu {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* أمواج الهيدر المتحركة */
+.wave-container {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: clamp(45px, 6vw, 70px);
+  overflow: hidden;
+  line-height: 0;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.animated-wave {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.parallax-waves > use {
+  animation: move-forever 12s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+.parallax-waves > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax-waves > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax-waves > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+@keyframes move-forever {
+  0% { transform: translate3d(-90px, 0, 0); }
+  100% { transform: translate3d(85px, 0, 0); }
+}
+
+/* =========================================================
+   2. المحتوى والخطوات
+   ========================================================= */
+.planner-content {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px 20px 110px 20px;
+  flex: 1;
+}
+
+.page-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* كروت الخطوات */
+.planner-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: clamp(16px, 2.5vw, 22px);
+  margin-bottom: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.step-title {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.step-number {
+  background-color: var(--primary-terracotta);
+  color: #FFFFFF;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.step-title h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.2;
+}
+
+.step-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.card-icon {
+  color: var(--primary-dark);
+  font-size: 1.15rem;
+  opacity: 0.75;
+}
+
+/* Step 1: خيارات الميزانية */
+.budget-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.budget-btn {
+  padding: 12px 6px;
+  background: #EFECE6;
+  border: 1.5px solid transparent;
+  border-radius: 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4A423D;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.budget-btn.active {
+  background-color: var(--primary-terracotta);
+  color: #FFFFFF;
+  box-shadow: 0 8px 18px rgba(178, 76, 56, 0.35);
+  transform: translateY(-2px);
+}
+
+/* حقل الميزانية المخصصة */
+.custom-budget-container {
+  display: flex;
+  margin-top: 12px;
+  gap: 10px;
+}
+
+.custom-budget-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #DCD8CF;
+  background: #FFFFFF;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.custom-budget-input:focus {
+  border-color: var(--primary-terracotta);
+}
+
+.custom-budget-save-btn {
+  background-color: var(--primary-terracotta);
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.custom-budget-save-btn:hover {
+  background-color: #983e2c;
+}
+
+/* Step 2: تفاصيل الرحلة */
+.details-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #332219;
+}
+
+.detail-select-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.detail-select-pill {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #EFECE6;
+  border: none;
+  padding: 9px 34px 9px 16px;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #4A423D;
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   Step 3: شبكة الاهتمامات الستة مع الظل وصح الاختيار
+   ========================================================= */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 600px) {
+  .interests-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.interest-chip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 36px 13px 16px; /* مسافة يمين مخصصة لعلامة الصح */
+  background: #F4F1EC;
+  border: 1.5px solid transparent;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4A423D;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+/* عند تفعيل الاهتمام: ارتفاع وظل سفلي فخم */
+.interest-chip.active {
+  background: #FFFFFF;
+  color: var(--primary-terracotta);
+  border-color: var(--primary-terracotta);
+  box-shadow: 0 10px 22px rgba(178, 76, 56, 0.22), 0 3px 6px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+/* علامة الصح (✓) الصغيرة الدائرية على اليمين */
+.interest-chip.active::after {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--primary-terracotta);
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: checkPop 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes checkPop {
+  0% {
+    transform: translateY(-50%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* زر التوليد CTA */
+.planner-action {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.btn-generate-trip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px;
+  background-color: var(--primary-terracotta);
+  color: #FFFFFF !important;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 22px rgba(178, 76, 56, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-generate-trip:hover {
+  background-color: #983e2c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(178, 76, 56, 0.45);
+}
+
+.btn-generate-trip:active {
+  transform: scale(0.98);
+}
+
+/* =========================================================
+   3. شريط التنقل السفلي المتجاوب (Floating Bottom Nav)
+   ========================================================= */
+.bottom-nav.floating-nav {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 500px;
+  height: 64px;
+  background: rgba(247, 243, 236, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+}
+
+.nav-item {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  color: #8C827A;
+  font-size: 11px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-item i, .nav-item svg {
+  font-size: 17px;
+}
+
+.nav-item.active {
+  color: var(--primary-terracotta);
+}
+
+/* الشاشات الصغيرة جداً */
+@media (max-width: 380px) {
+  .budget-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,151 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOVIA - Smart Interactive Map</title>
 
-    <title>JOVIA - Smart Map</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+    <!-- Custom CSS (المسار الصحيح بالرجوع خطوة لمجلد css) -->
+    <link rel="stylesheet" href="../css/smart-map.css">
 </head>
-
 <body>
 
-    <main class="smart-map-page">
+<div class="app-viewport-wrapper">
+    <div class="mobile-frame">
 
-        <!-- Header -->
-        <header class="map-header">
+        <!-- الهيدر العلوي -->
+        <header class="map-top-bar">
+            <!-- الشعار وبجانبه زر نشمي المحادثة -->
+            <div class="left-brand-group">
+                <a href="home.html" class="header-left-brand" style="text-decoration: none;">
+                    <span class="brand-box">JOVIA</span>
+                </a>
 
-            <button
-                type="button"
-                class="back-button"
-                aria-label="Go back">
+                <button type="button" class="nashmy-avatar-btn" id="openNashmyModalBtn" title="Ask Nashmy AI">
+                    <img src="../assets/nashmy.png" alt="Nashmy AI" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100'">
+                </button>
+            </div>
 
-                ←
-
-            </button>
-
-            <h1>
-                Smart Map
-            </h1>
-
-            <button
-                type="button"
-                class="search-button"
-                aria-label="Search">
-
-                🔍
-
-            </button>
-
+            <!-- زر تبديل اللغة -->
+            <div class="lang-dropdown-container">
+                <button type="button" class="lang-switch-btn" id="langSwitchBtn">
+                    <i class="fa-solid fa-globe"></i> <span>English</span>
+                    <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i>
+                </button>
+            </div>
         </header>
 
-
-        <!-- Map -->
-        <section class="map-container">
-
-            <!--
-                The actual interactive map
-                will be added later with JavaScript.
-            -->
-
-            <div class="map-placeholder">
-
-                <p>
-                    Jordan Map
-                </p>
-
-            </div>
-
-
-            <!-- Map Controls -->
-            <div class="map-controls">
-
-                <button
-                    type="button"
-                    class="location-button"
-                    aria-label="My location">
-
-                    📍
-
-                </button>
-
-                <button
-                    type="button"
-                    class="zoom-in-button"
-                    aria-label="Zoom in">
-
-                    +
-
-                </button>
-
-                <button
-                    type="button"
-                    class="zoom-out-button"
-                    aria-label="Zoom out">
-
-                    −
-
-                </button>
-
-            </div>
-
-
-            <!-- Selected Place -->
-            <article class="map-place-card">
-
-                <div class="place-card-content">
-
-                    <p class="place-category">
-                        Recommended for you
-                    </p>
-
-                    <h2>
-                        Petra
-                    </h2>
-
-                    <p>
-                        Discover one of Jordan's most iconic destinations.
-                    </p>
-
+        <!-- جسم الصفحة: شريط الاختيارات + الخريطة -->
+        <main class="map-page-body">
+            
+            <!-- شريط يعرض ملخص خيارات المستخدم القادمة من المخطط -->
+            <div class="user-selections-bar" id="userSelectionsBar">
+                <div class="selection-chip">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span id="summaryCity">Amman</span>
                 </div>
+                <div class="selection-chip">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span id="summaryBudget">250 JOD</span>
+                </div>
+                <div class="selection-chip">
+                    <i class="fa-solid fa-calendar-day"></i>
+                    <span id="summaryDays">3 Days</span>
+                </div>
+                <div class="selection-chip">
+                    <i class="fa-solid fa-compass"></i>
+                    <span id="summaryInterests">Adventure</span>
+                </div>
+            </div>
 
-                <button
-                    type="button"
-                    class="view-place-button">
+            <!-- حاوية الخريطة التفاعلية -->
+            <div id="map"></div>
 
-                    View Details
+        </main>
 
-                </button>
+        <!-- نافذة نشمي المنبثقة (Nashmy AI Modal) -->
+        <div class="nashmy-modal-overlay" id="nashmyModalOverlay">
+            <div class="nashmy-modal-card">
+                <div class="nashmy-modal-header">
+                    <div class="nashmy-info">
+                        <img src="../assets/nashmy.png" alt="Nashmy AI" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100'">
+                        <div>
+                            <h3>Nashmy AI</h3>
+                            <p>Your Local Jordan Guide</p>
+                        </div>
+                    </div>
+                    <button type="button" class="close-modal-btn" id="closeNashmyModalBtn">&times;</button>
+                </div>
+                <div class="nashmy-modal-body">
+                    <div class="chat-bubble bot">
+                        مرحباً بك! أنا نشمي، مسارك السياحي المخصص جاهز على الخريطة. هل تود استكشاف أي نقطة أو تعديل المسار؟
+                    </div>
+                </div>
+                <div class="nashmy-modal-footer">
+                    <input type="text" placeholder="اسأل نشمي عن أي مكان في المسار...">
+                    <button type="button"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
 
-            </article>
-
-        </section>
-
-
-        <!-- Bottom Navigation -->
-        <nav class="bottom-navigation">
-
-            <a href="profile.html">
-                Profile
+        <!-- شريط التنقل السفلي -->
+        <nav class="bottom-nav floating-nav">
+            <a href="profile.html" class="nav-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
             </a>
-
-            <a href="home.html">
-                Home
+            <a href="home.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
             </a>
-
-            <a href="smart-map.html">
-                Map
+            <a href="smart-map.html" class="nav-item active">
+                <i class="fa-solid fa-compass"></i>
+                <span>Map</span>
             </a>
-
-            <a href="know-jordan.html">
-                Know Jordan
+            <a href="know-jordan.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="10,0.5 11.74,6.4 17.43,4.08 13.90,9.11 19.26,12.11 13.13,12.49 14.12,18.56 10,14 5.88,18.56 6.87,12.49 0.74,12.11 6.10,9.11 2.57,4.08 8.26,6.40"/>
+                </svg>
+                <span>Know JORDAN</span>
             </a>
-
         </nav>
 
-    </main>
+    </div>
+</div>
+
+<!-- Leaflet JS & Map Script -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+    // تهيئة الخريطة فور تحميل الصفحة
+    document.addEventListener("DOMContentLoaded", () => {
+        // قراءة تفاصيل الرحلة المحفوظة إن وجدت
+        const savedPlan = JSON.parse(localStorage.getItem('joviaTripPlan') || '{}');
+        if (savedPlan.city) document.getElementById('summaryCity').textContent = savedPlan.city;
+        if (savedPlan.budget) document.getElementById('summaryBudget').textContent = savedPlan.budget;
+        if (savedPlan.days) document.getElementById('summaryDays').textContent = `${savedPlan.days} Days`;
+        if (savedPlan.interests && savedPlan.interests.length) {
+            document.getElementById('summaryInterests').textContent = savedPlan.interests[0];
+        }
+
+        // تشغيل خريطة Leaflet (إحداثيات الأردن)
+        const map = L.map('map').setView([31.9522, 35.9332], 9);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap'
+        }).addTo(map);
+
+        // نقطة بداية (عمان)
+        L.marker([31.9522, 35.9332]).addTo(map)
+            .bindPopup('<b>Start: Amman</b><br>Welcome to your Smart Trip!')
+            .openPopup();
+
+        // نافذة نشمي المودال
+        const modal = document.getElementById('nashmyModalOverlay');
+        const openBtn = document.getElementById('openNashmyModalBtn');
+        const closeBtn = document.getElementById('closeNashmyModalBtn');
+
+        if (openBtn && modal) {
+            openBtn.addEventListener('click', () => modal.classList.add('active'));
+        }
+        if (closeBtn && modal) {
+            closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+        }
+    });
+</script>
 
 </body>
-
 </html>

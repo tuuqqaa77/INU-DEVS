@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* =========================================================
+   متغيرات التصميم وإعادة الضبط (JOVIA Design System)
+   ========================================================= */
+:root {
+  --bg-main: #FAF8F3;
+  --primary-terracotta: #B24C38;
+  --primary-dark: #221510;
+  --text-muted: #7D7571;
+  --card-bg: #FFFFFF;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg-main);
+  font-family: var(--font-sans);
+  color: var(--primary-dark);
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* حاوية الصفحة الكاملة بدون إطارات */
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--bg-main);
+}
+
+/* =========================================================
+   1. الهيدر وصورة جرش
+   ========================================================= */
+.hero-header {
+  position: relative;
+  width: 100%;
+  height: clamp(220px, 30vh, 290px);
+  background: linear-gradient(180deg, rgba(20, 10, 5, 0.45) 0%, rgba(20, 10, 5, 0.15) 100%),
+              url('../assets/JARASH%201.jpeg') center center / cover no-repeat;
+  padding: 24px 20px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 5;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+/* مجموعة الشعار ونشمي على اليسار */
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-brand {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 6px 18px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.avatar-wrapper:hover {
+  transform: scale(1.08);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* زر اللغة على اليمين */
+.lang-pill {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================================
+   2. جسم المحتوى وقائمة الأيام
+   ========================================================= */
+.content-body {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px 20px 120px 20px; /* مسافة 120px تمنع التصاق المحتوى بالبار */
+  flex: 1;
+}
+
+.itinerary-title-sec {
+  margin-bottom: 20px;
+}
+
+.main-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 4px;
+}
+
+.budget-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.budget-val {
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+/* بطاقات الأيام */
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.day-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.day-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.card-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-day-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 6px;
+}
+
+.activity-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.activity-points li {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.diamond-bullet {
+  font-size: 6px;
+  color: var(--primary-terracotta);
+  flex-shrink: 0;
+}
+
+.card-arrow {
+  color: #B5ACA4;
+  font-size: 13px;
+  padding-left: 4px;
+}
+
+/* زر الانتقال لمسار الخريطة */
+.action-btn-box {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.btn-roadmap {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background-color: #555E52;
+  color: #FFFFFF !important;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(85, 94, 82, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-roadmap:hover {
+  background-color: #444c41;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(85, 94, 82, 0.45);
+}
+
+.btn-roadmap:active {
+  transform: scale(0.98);
+}
+
+/* =========================================================
+   3. البار السفلي العائم (Floating Bottom Bar)
+   ========================================================= */
+.bottom-bar {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 500px;
+  height: 64px;
+  background: rgba(247, 243, 236, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex !important;
+  flex-direction: row !important; /* ضمان الترتيب الأفقي */
+  justify-content: space-around !important; /* توزيع الأزرار بالتساوي */
+  align-items: center !important;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+  padding: 0 12px;
+}
+
+.bottom-bar .nav-item {
+  text-decoration: none;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3px;
+  color: #8C827A;
+  font-size: 11px;
+  font-weight: 600;
+  flex: 1;
+  transition: color 0.2s ease;
+}
+
+.bottom-bar .nav-item i,
+.bottom-bar .nav-item svg {
+  font-size: 17px;
+}
+
+.bottom-bar .nav-item.active {
+  color: var(--primary-terracotta);
+}

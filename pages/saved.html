@@ -1,253 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOVIA - Your Saved</title>
 
-    <title>JOVIA - Saved</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <!-- مسار CSS الصحيح بالرجوع خطوة لمجلد css -->
+  <link rel="stylesheet" href="../css/saved.css">
+
+  <!-- الخطوط -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- أيقونات Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
 
-    <main class="saved-page">
-
-        <!-- Header -->
-        <header class="saved-header">
-
-            <button
-                type="button"
-                class="back-button"
-                aria-label="Go back">
-
-                ←
-
-            </button>
-
-            <h1>
-                Saved
-            </h1>
-
-            <button
-                type="button"
-                class="search-button"
-                aria-label="Search">
-
-                🔍
-
-            </button>
-
-        </header>
-
-
-        <!-- Saved Places -->
-        <section class="saved-content">
-
-            <div class="section-heading">
-
-                <h2>
-                    Saved Places
-                </h2>
-
-                <span>
-                    4 places
-                </span>
-
-            </div>
-
-
-            <div class="saved-places">
-
-
-                <!-- Saved Place -->
-                <article class="saved-place-card">
-
-                    <img
-                        src="../assets/images/petra.jpg"
-                        alt="Petra"
-                    >
-
-                    <div class="saved-place-info">
-
-                        <div>
-
-                            <span class="place-category">
-                                History
-                            </span>
-
-                            <h3>
-                                Petra
-                            </h3>
-
-                            <p>
-                                The Rose City
-                            </p>
-
-                        </div>
-
-                        <button
-                            type="button"
-                            class="remove-saved-button"
-                            aria-label="Remove Petra from saved">
-
-                            ♥️
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- Saved Place -->
-                <article class="saved-place-card">
-
-                    <img
-                        src="../assets/images/wadi-rum.jpg"
-                        alt="Wadi Rum"
-                    >
-
-                    <div class="saved-place-info">
-
-                        <div>
-
-                            <span class="place-category">
-                                Nature
-                            </span>
-
-                            <h3>
-                                Wadi Rum
-                            </h3>
-
-                            <p>
-                                Valley of the Moon
-                            </p>
-
-                        </div>
-
-                        <button
-                            type="button"
-                            class="remove-saved-button"
-                            aria-label="Remove Wadi Rum from saved">
-
-                            ♥️
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- Saved Place -->
-                <article class="saved-place-card">
-
-                    <img
-                        src="../assets/images/jerash.jpg"
-                        alt="Jerash"
-                    >
-
-                    <div class="saved-place-info">
-
-                        <div>
-
-                            <span class="place-category">
-                                History
-                            </span>
-
-                            <h3>
-                                Jerash
-                            </h3>
-
-                            <p>
-                                Ancient Roman City
-                            </p>
-
-                        </div>
-
-                        <button
-                            type="button"
-                            class="remove-saved-button"
-                            aria-label="Remove Jerash from saved">
-
-                            ♥️
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- Saved Place -->
-                <article class="saved-place-card">
-
-                    <img
-                        src="../assets/images/aqaba.jpg"
-                        alt="Aqaba"
-                    >
-
-                    <div class="saved-place-info">
-
-                        <div>
-
-                            <span class="place-category">
-                                Sea
-                            </span>
-
-                            <h3>
-                                Aqaba
-                            </h3>
-
-                            <p>
-                                The Red Sea
-                            </p>
-
-                        </div>
-
-                        <button
-                            type="button"
-                            class="remove-saved-button"
-                            aria-label="Remove Aqaba from saved">
-
-                            ♥️
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- Bottom Navigation -->
-        <nav class="bottom-navigation">
-
-            <a href="profile.html">
-                Profile
-            </a>
-
-            <a href="home.html">
-                Home
-            </a>
-
-            <a href="smart-map.html">
-                Map
-            </a>
-
-            <a href="know-jordan.html">
-                Know Jordan
-            </a>
-
-        </nav>
+  <div class="app-container">
+    
+    <!-- Header: الشعار ونشمي معاً على اليسار، وزر اللغة على اليمين -->
+    <header class="header">
+      <div class="left-brand-group">
+        <a href="home.html" class="brand-link">JOVIA</a>
+        
+        <a href="nashmy.html" class="avatar-wrapper" id="chatbotAvatarBtn" title="Click to chat with Nashmy AI">
+          <img src="../assets/nashmy.png" alt="Nashmy" class="avatar-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100'">
+          <span class="online-status"></span>
+        </a>
+      </div>
+
+      <button type="button" class="lang-btn" id="langSwitchBtn">
+        <i class="fa-solid fa-globe"></i>
+        <span>English</span>
+      </button>
+    </header>
+
+    <!-- Title & Score Section -->
+    <section class="title-section">
+      <h1 class="page-title">YOUR SAVED</h1>
+      <div class="score-badge">SCORE: 600</div>
+    </section>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" id="searchInput" placeholder="Search in Saved..." onkeyup="filterSavedItems()">
+    </div>
+
+    <!-- Saved Cards List -->
+    <main class="cards-list" id="cardsList">
+      
+      <!-- Card 1: Wadi Mujib -->
+      <article class="saved-card">
+        <div class="card-thumb">
+          <img src="../assets/adv&marketH.jpg" alt="Wadi Mujib" onerror="this.src='https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?w=400'">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">WADI MUJIB</h2>
+          <p class="card-desc">Wadi Mujib is a picturesque valley known for its fresh springs, olive groves, and historic watermills.</p>
+          <div class="card-rating">
+            <i class="fa-solid fa-star star-icon"></i>
+            <span>4.8 <small>(2.3k reviews)</small></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Aqaba -->
+      <article class="saved-card">
+        <div class="card-thumb">
+          <img src="../assets/seah.png" alt="Aqaba" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400'">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">AQABA</h2>
+          <p class="card-desc">Aqaba is Jordan's only coastal city, famous for its warm Red Sea beaches and vibrant coral reefs.</p>
+          <div class="card-rating">
+            <i class="fa-solid fa-star star-icon"></i>
+            <span>4.6 <small>(2.8k reviews)</small></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Jerash -->
+      <article class="saved-card">
+        <div class="card-thumb">
+          <img src="../assets/JARASH%201.jpeg" alt="Jerash" onerror="this.src='https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400'">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">JERASH</h2>
+          <p class="card-desc">Jerash is famous for its remarkably preserved ancient Roman ruins, featuring grand colonnaded streets and theaters.</p>
+          <div class="card-rating">
+            <i class="fa-solid fa-star star-icon"></i>
+            <span>4.7 <small>(2.6k reviews)</small></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: Madaba -->
+      <article class="saved-card">
+        <div class="card-thumb">
+          <img src="../assets/ammanH.png" alt="Madaba" onerror="this.src='https://images.unsplash.com/photo-1563245372-f21724e3856d?w=400'">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">MADABA</h2>
+          <p class="card-desc">Known as the City of Mosaics, famous for its 6th-century Byzantine mosaic map of the Holy Land.</p>
+          <div class="card-rating">
+            <i class="fa-solid fa-star star-icon"></i>
+            <span>4.5 <small>(1.9k reviews)</small></span>
+          </div>
+        </div>
+      </article>
 
     </main>
 
-</body>
+    <!-- Quick Services Grid -->
+    <section class="services-grid">
+      <div class="service-pill">
+        <i class="fa-solid fa-mug-hot"></i>
+        <span>LOCAL EXPERIENCES</span>
+      </div>
+      <div class="service-pill">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <span>OFFLINE MAP</span>
+      </div>
+    </section>
 
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-bar">
+      <a href="profile.html" class="nav-item">
+        <i class="fa-regular fa-user"></i>
+        <span>Profile</span>
+      </a>
+      <a href="home.html" class="nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="smart-map.html" class="nav-item">
+        <i class="fa-regular fa-compass"></i>
+        <span>Map</span>
+      </a>
+      <a href="know-jordan.html" class="nav-item">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+          <polygon points="10,0.5 11.74,6.4 17.43,4.08 13.90,9.11 19.26,12.11 13.13,12.49 14.12,18.56 10,14 5.88,18.56 6.87,12.49 0.74,12.11 6.10,9.11 2.57,4.08 8.26,6.40"/>
+        </svg>
+        <span>Know JORDAN</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../js/saved.js"></script>
+</body>
 </html>

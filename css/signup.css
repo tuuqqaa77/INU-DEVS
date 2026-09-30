@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* =========================================================
+   Variables & Reset
+   ========================================================= */
+:root {
+  --bg-main: #FAF8F3;
+  --primary-terracotta: #B24C38;
+  --primary-dark: #221510;
+  --text-muted: #7D7571;
+  --card-bg: #FFFFFF;
+  --input-bg: #F8F6F2;
+  --input-border: #EAE5DC;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.signup-body {
+  background-color: var(--bg-main);
+  font-family: var(--font-sans);
+  color: var(--primary-dark);
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.app-viewport-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* إلغاء حواف الموبايل وجعل التصميم متجاوب بالكامل Full-Width */
+.mobile-frame {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 100%;
+  background-color: var(--bg-main);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* =========================================================
+   Header & Navigation
+   ========================================================= */
+.signup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 10px 20px;
+  z-index: 10;
+}
+
+.left-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-left-brand {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 8px 18px;
+  border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease;
+}
+
+.header-left-brand:hover {
+  transform: translateY(-1px);
+}
+
+.brand-box {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.18rem;
+  letter-spacing: 0.12em;
+  color: var(--primary-dark);
+}
+
+.nashmy-mini-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(178, 76, 56, 0.35);
+  background: #FFFFFF;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.nashmy-mini-avatar:hover {
+  transform: scale(1.08);
+}
+
+.nashmy-mini-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Languages Dropdown */
+.lang-dropdown-container {
+  position: relative;
+}
+
+.top-btn-light {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.top-btn-light .arrow-icon {
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+.lang-menu-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: #FFFFFF;
+  border: 1px solid #ECE7DE;
+  border-radius: 12px;
+  width: 110px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.lang-menu-dropdown.show {
+  display: block;
+}
+
+.lang-opt {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  transition: background 0.2s;
+}
+
+.lang-opt:first-child {
+  border-bottom: 1px solid #F4F1EC;
+}
+
+.lang-opt:hover {
+  background-color: #F8F4EE;
+  color: var(--primary-terracotta);
+}
+
+/* =========================================================
+   Signup Content & Card
+   ========================================================= */
+.signup-content {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 14px 20px 50px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-title-area {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.welcome-title-area h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.welcome-title-area p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* Signup Card Form */
+.signup-card {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 22px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  margin-bottom: 18px;
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-group:last-child {
+  margin-bottom: 0;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #332219;
+  margin-bottom: 6px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 14px;
+  font-size: 0.88rem;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.input-group input:focus {
+  border-color: var(--primary-terracotta);
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  padding-right: 42px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 14px;
+  cursor: pointer;
+  color: #8C827A;
+  font-size: 15px;
+}
+
+/* Primary Button */
+.btn-signup {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--primary-terracotta);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(178, 76, 56, 0.35);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-signup:hover {
+  background-color: #983e2c;
+  transform: translateY(-1px);
+}
+
+.btn-signup:active {
+  transform: scale(0.98);
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 22px 0;
+}
+
+.divider hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid #E5E0D8;
+}
+
+.divider span {
+  padding: 0 12px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Social Buttons */
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-social {
+  width: 100%;
+  height: 48px;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E0D8;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-social:hover {
+  background-color: #FAF8F5;
+  border-color: #D6CEBE;
+}
+
+.btn-social i {
+  font-size: 1.25rem;
+}
+
+/* Login Prompt */
+.login-prompt {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 24px;
+}
+
+.login-prompt a {
+  color: var(--primary-terracotta);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
+}
