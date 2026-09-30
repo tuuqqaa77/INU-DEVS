@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOVIA - Home</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+    <main class="home-page">
+
+       <!-- Header Hero Banner with Jarash Image -->
+<header class="smart-trip-hero">
+    <img src="../assets/images/JARASH 1.jpeg" alt="Jerash Jordan" class="hero-bg-img" onerror="this.src='JARASH 1.jpeg'">
+            <div class="hero-controls">
+                <div class="brand-area header-glass-left">
+                    <a href="onboarding.html" class="brand-name-link">JOVIA</a>
+                    <a href="nashmy.html" class="avatar-link" title="Chat with Nashmi">
+                        <img class="profile-avatar" src="../assets/images/avatar.png" alt="Nashmi" onerror="this.src='avatar.png'">
+                    </a>
+                </div>
+
+                <!-- Global Language Dropdown -->
+                <div class="language-dropdown-wrapper">
+                    <button class="language-button" id="langDropdownBtn" type="button">
+                        <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path>
+                        </svg>
+                        <span id="currentLang">English</span>
+                    </button>
+
+                    <ul class="language-menu" id="langMenu">
+                        <li><button type="button" class="lang-option" data-lang="English">English</button></li>
+                        <li><button type="button" class="lang-option" data-lang="العربية">العربية</button></li>
+                        <li><button type="button" class="lang-option" data-lang="Español">Español</button></li>
+                        <li><button type="button" class="lang-option" data-lang="Français">Français</button></li>
+                        <li><button type="button" class="lang-option" data-lang="Deutsch">Deutsch</button></li>
+                        <li><button type="button" class="lang-option" data-lang="Italiano">Italiano</button></li>
+                        <li><button type="button" class="lang-option" data-lang="Русский">Русский</button></li>
+                        <li><button type="button" class="lang-option" data-lang="中文">中文</button></li>
+                        <li><button type="button" class="lang-option" data-lang="日本語">日本語</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Interactive Animated Curved Wave -->
+            <div class="interactive-wave-container">
+                <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="animated-wave-svg">
+                    <path d="M0,32L60,42.7C120,53,240,75,360,80C480,85,600,75,720,58.7C840,43,960,21,1080,21.3C1200,21,1320,43,1380,53.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z" class="wave-path-1"></path>
+                </svg>
+            </div>
+        </header>
+
+        <!-- Main Container -->
+        <div class="home-container">
+
+            <div class="itinerary-header">
+                <h1 class="itinerary-title">Your 3–Day Jordan Itinerary</h1>
+                <p class="itinerary-subtitle">budget : 150 JOD</p>
+            </div>
+
+            <!-- Day 1 Card -->
+            <a href="place-details.html" class="itinerary-card day-1">
+                <div class="card-thumb-wrapper">
+                    <img src="../assets/images/AMMAN 1.png" alt="Amman" class="card-thumb" onerror="this.src='AMMAN 1.png'">
+                </div>
+                <div class="card-details">
+                    <h2>Day 1 – Amman</h2>
+                    <ul class="itinerary-bullets">
+                        <li><span class="diamond-icon">◇</span> Local food experience</li>
+                        <li><span class="diamond-icon">◇</span> Historic sites</li>
+                        <li><span class="diamond-icon">◇</span> Sunset viewpoint</li>
+                    </ul>
+                </div>
+                <div class="arrow-indicator">›</div>
+            </a>
+
+            <!-- Day 2 Card -->
+            <a href="place-details.html" class="itinerary-card day-2">
+                <div class="card-thumb-wrapper">
+                    <img src="../assets/images/SEA.avif" alt="Nature and Culture" class="card-thumb" onerror="this.src='SEA.avif'">
+                </div>
+                <div class="card-details">
+                    <h2>Day 2 – Nature & Culture</h2>
+                    <ul class="itinerary-bullets">
+                        <li><span class="diamond-icon">◇</span> Hiking & nature destination</li>
+                        <li><span class="diamond-icon">◇</span> Local lunch</li>
+                        <li><span class="diamond-icon">◇</span> Cultural experience</li>
+                    </ul>
+                </div>
+                <div class="arrow-indicator">›</div>
+            </a>
+
+            <!-- Day 3 Card -->
+            <a href="place-details.html" class="itinerary-card day-3">
+                <div class="card-thumb-wrapper">
+                    <img src="../assets/images/SEEAQ 1.jpg" alt="Adventure & Market" class="card-thumb" onerror="this.src='SEEAQ 1.jpg'">
+                </div>
+                <div class="card-details">
+                    <h2>Day 3 – Adventure & Market</h2>
+                    <ul class="itinerary-bullets">
+                        <li><span class="diamond-icon">◇</span> Adventure activity</li>
+                        <li><span class="diamond-icon">◇</span> Local market</li>
+                        <li><span class="diamond-icon">◇</span> Restaurant & return</li>
+                    </ul>
+                </div>
+                <div class="arrow-indicator">›</div>
+            </a>
+
+            <!-- Journey Roadmap Button -->
+            <a href="roadmap.html" class="roadmap-btn">
+                Journey Roadmap
+            </a>
+
+        </div>
+
+        <!-- Fixed Bottom Navigation Bar -->
+        <nav class="bottom-navigation">
+            <a href="profile.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Profile</span>
+            </a>
+
+            <a href="home.html" class="nav-item active">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>Home</span>
+            </a>
+
+            <a href="smart-map.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                    <line x1="8" y1="2" x2="8" y2="18"></line>
+                    <line x1="16" y1="6" x2="16" y2="22"></line>
+                </svg>
+                <span>Map</span>
+            </a>
+
+            <a href="know-jordan.html" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <polygon points="12,2 14.1,7.2 19.8,6.1 17.5,11.3 21.8,15 16.1,16.2 15.2,21.9 12,17.2 8.8,21.9 7.9,16.2 2.2,15 6.5,11.3 4.2,6.1 9.9,7.2"></polygon>
+                </svg>
+                <span>Know JORDAN</span>
+            </a>
+        </nav>
+
+    </main>
+
+    <!-- Script -->
+    <script>
+        const langDropdownBtn = document.getElementById('langDropdownBtn');
+        const langMenu = document.getElementById('langMenu');
+        const currentLang = document.getElementById('currentLang');
+
+        if (langDropdownBtn) {
+            langDropdownBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langMenu.classList.toggle('show');
+            });
+        }
+
+        document.querySelectorAll('.lang-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                currentLang.textContent = e.target.getAttribute('data-lang');
+                langMenu.classList.remove('show');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            if (langMenu) langMenu.classList.remove('show');
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap');
+
+/* إعدادات الصفحة العامة */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FAF8F3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* ستايل الشعار */
+.brand-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  user-select: none;
+  cursor: pointer;
+  
+  /* أنيميشن التحميل والظهور الأولي */
+  animation: initialSplash 2s cubic-bezier(0.25, 1, 0.35, 1) forwards;
+}
+
+/* حركة التحميل والتوهج الناعم (2 ثانية) */
+@keyframes initialSplash {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+    filter: blur(8px);
+    color: #c4b5a5;
+  }
+  35% {
+    opacity: 0.6;
+    filter: blur(2px);
+    color: #8c7b6d;
+    text-shadow: 0 0 18px rgba(140, 123, 109, 0.3);
+  }
+  70% {
+    opacity: 0.85;
+    filter: blur(0px);
+    color: #3d342d;
+    text-shadow: 0 0 8px rgba(61, 52, 45, 0.15);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+    color: #1a1614;
+    text-shadow: none;
+  }
+}

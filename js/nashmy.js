@@ -1,3 +1,4 @@
+
 const GEMINI_API_KEY = "AQ.Ab8RN6Kpxx602w8tDBGHTRznoubJkbLdGJHXI9_ajP1IdARVqw";
 
 async function sendToNashmyAI(userMessage) {
@@ -141,5 +142,4 @@ document.addEventListener('DOMContentLoaded', () => {
                 handleUserSubmit();
             }
         });
-    }
-});
+    }}
