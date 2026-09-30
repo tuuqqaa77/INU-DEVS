@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 /* =========================================================
-   Design Variables (مأخوذة مباشرة من ألوان Figma)
+   Design Variables
    ========================================================= */
 :root {
   --bg-main: #FAF8F3;
@@ -23,6 +23,10 @@
   -webkit-font-smoothing: antialiased;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body.login-body {
   background-color: var(--bg-main);
   font-family: var(--font-sans);
@@ -33,18 +37,22 @@ body.login-body {
   padding: 0;
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
 }
 
-/* تخطيط الصفحة المتجاوب Full-Width */
+/* =========================================================
+   Responsive Page Container
+   ========================================================= */
 .profile-page {
   width: 100%;
-  max-width: 480px;
+  max-width: 960px;
   min-height: 100vh;
   min-height: 100dvh;
-  padding: 16px 20px 110px 20px;
+  padding: clamp(14px, 2.5vw, 24px) clamp(16px, 3.5vw, 36px) 115px clamp(16px, 3.5vw, 36px);
   display: flex;
   flex-direction: column;
   position: relative;
+  margin: 0 auto;
 }
 
 /* =========================================================
@@ -55,8 +63,8 @@ body.login-body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding-top: 6px;
-  margin-bottom: 24px;
+  padding-top: 4px;
+  margin-bottom: clamp(18px, 2.8vw, 26px);
 }
 
 .brand-pill-glass {
@@ -70,6 +78,11 @@ body.login-body {
   align-items: center;
   gap: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease;
+}
+
+.brand-pill-glass:hover {
+  transform: translateY(-1px);
 }
 
 .brand-link {
@@ -107,6 +120,12 @@ body.login-body {
   align-items: center;
   gap: 6px;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: background-color 0.2s ease;
+}
+
+.lang-pill-glass:hover {
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .globe-icon {
@@ -157,44 +176,56 @@ body.login-body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: clamp(20px, 3vw, 28px);
+  gap: 12px;
 }
 
 .user-meta-info {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: clamp(10px, 2vw, 14px);
+  min-width: 0;
 }
 
 .profile-user-avatar {
-  width: 50px;
-  height: 50px;
+  width: clamp(48px, 6vw, 56px);
+  height: clamp(48px, 6vw, 56px);
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(0, 0, 0, 0.06);
+}
+
+.user-text-details {
+  min-width: 0;
 }
 
 .user-display-name {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
   font-weight: 700;
   color: var(--primary-dark);
-  line-height: 1.2;
+  line-height: 1.25;
+  word-break: break-word;
 }
 
 .user-email-address {
-  font-size: 0.78rem;
+  font-size: clamp(0.74rem, 1.4vw, 0.82rem);
   color: var(--text-muted);
+  word-break: break-all;
+  margin-top: 2px;
 }
 
 .profile-quick-actions {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .action-circle-btn {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -206,6 +237,12 @@ body.login-body {
   cursor: pointer;
   position: relative;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.action-circle-btn:hover {
+  transform: translateY(-1px);
+  background-color: #FAF8F5;
 }
 
 .action-circle-btn svg {
@@ -228,29 +265,45 @@ body.login-body {
    3. بطاقات الرحلات القادمة (Your Next Trip)
    ========================================================= */
 .profile-section {
-  margin-bottom: 22px;
+  margin-bottom: clamp(20px, 3vw, 28px);
+  width: 100%;
 }
 
 .profile-section-title {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
   font-weight: 700;
   color: var(--primary-dark);
   margin-bottom: 12px;
+}
+
+/* شبكة متجاوبة للرحلات القادمة */
+.upcoming-trips-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 680px) {
+  .upcoming-trips-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
 }
 
 .upcoming-trip-card {
   background: var(--card-bg);
   border-radius: 18px;
   padding: 16px 16px 14px 24px;
-  margin-bottom: 14px;
   position: relative;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.04);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* الشريط الملون السميك على اليسار كما في تصميم فيغما */
 .upcoming-trip-card::before {
   content: '';
   position: absolute;
@@ -273,17 +326,24 @@ body.login-body {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 10px;
+  gap: 8px;
+}
+
+.trip-title-group {
+  min-width: 0;
+  flex: 1;
 }
 
 .trip-title-group h3 {
-  font-size: 0.96rem;
+  font-size: clamp(0.94rem, 1.6vw, 1.05rem);
   font-weight: 700;
   color: var(--primary-dark);
   margin-bottom: 2px;
+  word-break: break-word;
 }
 
 .trip-subtitle {
-  font-size: 0.72rem;
+  font-size: clamp(0.72rem, 1.3vw, 0.78rem);
   color: var(--text-muted);
 }
 
@@ -295,6 +355,7 @@ body.login-body {
   padding: 3px 8px;
   border-radius: 8px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .trip-tags-row {
@@ -315,36 +376,49 @@ body.login-body {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
 }
 
-/* الزر الكحلي الغامق العريض المأخوذ من فيغما */
 .view-plan-dark-btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   background-color: var(--navy-btn);
   color: #FFFFFF !important;
   text-align: center;
   text-decoration: none;
-  padding: 10px;
+  padding: 10px 14px;
+  min-height: 42px;
   border-radius: 12px;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  margin-top: auto;
 }
 
 .view-plan-dark-btn:hover {
-  opacity: 0.9;
+  opacity: 0.92;
+  transform: translateY(-1px);
 }
 
 /* =========================================================
    4. قسم الرحلات السابقة (Past Trip Log)
    ========================================================= */
 .past-trip-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+@media (min-width: 680px) {
+  .past-trip-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
 }
 
 .past-trip-item {
@@ -357,11 +431,18 @@ body.login-body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
   border: 1px solid rgba(0, 0, 0, 0.03);
   cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  min-height: 58px;
+}
+
+.past-trip-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
 }
 
 .past-trip-icon {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 10px;
   background: #EFF6FF;
   color: #2563EB;
@@ -371,47 +452,77 @@ body.login-body {
   flex-shrink: 0;
 }
 
-.past-trip-icon svg {
-  width: 18px;
-  height: 18px;
+.past-trip-icon svg,
+.past-trip-icon i {
+  font-size: 16px;
 }
 
 .past-trip-info {
   flex: 1;
+  min-width: 0;
 }
 
 .past-trip-info h3 {
-  font-size: 0.88rem;
+  font-size: clamp(0.85rem, 1.4vw, 0.92rem);
   font-weight: 600;
   color: var(--primary-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .past-trip-info p {
   font-size: 0.7rem;
   color: var(--text-muted);
+  margin-top: 1px;
 }
 
 .arrow-right {
   font-size: 1.2rem;
   color: #B5ACA4;
+  flex-shrink: 0;
+}
+
+.trips-buttons-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+  margin: 16px auto 0 auto;
 }
 
 .show-more-dark-btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
   background-color: var(--navy-btn);
   color: #FFFFFF;
   border: none;
-  padding: 10px;
+  padding: 10px 16px;
+  min-height: 42px;
   border-radius: 12px;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+}
+
+.trips-buttons-group .show-more-dark-btn {
+  flex: 1 1 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }
 
 .show-more-dark-btn:hover {
-  opacity: 0.9;
+  opacity: 0.92;
+  transform: translateY(-1px);
 }
 
 /* =========================================================
@@ -421,22 +532,34 @@ body.login-body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  margin-top: 10px;
+  gap: 8px;
+  margin-top: 14px;
   margin-bottom: 16px;
 }
 
 .logout-link-btn {
   color: #EF4444;
   text-decoration: none;
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 600;
+  padding: 6px 12px;
+  transition: color 0.15s ease;
+}
+
+.logout-link-btn:hover {
+  text-decoration: underline;
 }
 
 .help-support-link {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.75rem;
+  font-size: 0.76rem;
+  padding: 4px 8px;
+  transition: color 0.15s ease;
+}
+
+.help-support-link:hover {
+  text-decoration: underline;
 }
 
 /* =========================================================
@@ -444,13 +567,13 @@ body.login-body {
    ========================================================= */
 .bottom-navigation {
   position: fixed;
-  bottom: 16px;
+  bottom: clamp(10px, 2vh, 18px);
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 32px);
   max-width: 480px;
   height: 64px;
-  background: rgba(247, 243, 236, 0.92);
+  background: rgba(247, 243, 236, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   display: flex;
@@ -476,6 +599,7 @@ body.login-body {
   font-weight: 600;
   flex: 1;
   transition: color 0.2s ease;
+  min-height: 48px;
 }
 
 .bottom-navigation .nav-icon {
@@ -485,4 +609,32 @@ body.login-body {
 
 .bottom-navigation .nav-item.active {
   color: var(--accent-brown);
+}
+
+/* =========================================================
+   7. شاشات الهواتف الصغيرة جداً (< 380px)
+   ========================================================= */
+@media (max-width: 380px) {
+  .profile-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  .profile-user-avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .upcoming-trip-card {
+    padding: 14px 12px 12px 18px;
+  }
+
+  .trip-tags-row {
+    gap: 4px;
+  }
+
+  .info-pill {
+    padding: 3px 6px;
+    font-size: 0.66rem;
+  }
 }

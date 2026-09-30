@@ -9,7 +9,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -53,7 +55,8 @@
         <!-- Profile Information Section -->
         <section class="profile-user-card">
             <div class="user-meta-info">
-                <img src="../assets/pfp.webp" alt="Profile Avatar" class="profile-user-avatar" onerror="this.src='../assets/images/Image 22.jpeg'">
+                <img src="../assets/pfp.webp" alt="Profile Avatar" class="profile-user-avatar"
+                    onerror="this.src='../assets/images/Image 22.jpeg'">
                 <div class="user-text-details">
                     <h1 class="user-display-name" id="userDisplayName">Loading...</h1>
                     <p class="user-email-address" id="userEmailAddress">Loading...</p>
@@ -79,58 +82,62 @@
         <section class="profile-section">
             <h2 class="profile-section-title">Your Next Trip</h2>
 
-            <!-- Trip Card 1 (Brown Edge Accent) -->
-            <article class="upcoming-trip-card accent-brown">
-                <div class="trip-card-header">
-                    <div class="trip-title-group">
-                        <h3>Amman & Nature Escape</h3>
-                        <p class="trip-subtitle">Amman, Petra, and Dana Reserve</p>
+            <div class="upcoming-trips-grid">
+                <!-- Trip Card 1 (Brown Edge Accent) -->
+                <article class="upcoming-trip-card accent-brown">
+                    <div class="trip-card-header">
+                        <div class="trip-title-group">
+                            <h3>Amman & Nature Escape</h3>
+                            <p class="trip-subtitle">Amman, Petra, and Dana Reserve</p>
+                        </div>
+                        <span class="trip-status-tag">Confirmed • Coming Soon</span>
                     </div>
-                    <span class="trip-status-tag">Confirmed • Coming Soon</span>
-                </div>
 
-                <div class="trip-tags-row">
-                    <span class="info-pill calendar-pill">
-                        📅 15 – 18 Oct 2026
-                    </span>
-                    <span class="info-pill time-pill">
-                        ⌛ 3 Days
-                    </span>
-                    <span class="info-pill budget-pill">
-                        💰 180 JOD
-                    </span>
-                </div>
-
-                <a href="roadmap.html" class="view-plan-dark-btn">→ View Plan Details</a>
-            </article>
-
-            <!-- Trip Card 2 (Turquoise Edge Accent) -->
-            <article class="upcoming-trip-card accent-teal">
-                <div class="trip-card-header">
-                    <div class="trip-title-group">
-                        <h3>Northern Wonders & Hills</h3>
-                        <p class="trip-subtitle">Ajloun, Irbid, and Umm Qais viewpoint</p>
+                    <div class="trip-tags-row">
+                        <span class="info-pill calendar-pill">
+                            📅 15 – 18 Oct 2026
+                        </span>
+                        <span class="info-pill time-pill">
+                            ⌛ 3 Days
+                        </span>
+                        <span class="info-pill budget-pill">
+                            💰 180 JOD
+                        </span>
                     </div>
-                </div>
 
-                <div class="trip-tags-row">
-                    <span class="info-pill calendar-pill">
-                        📅 24–26 Oct 2026
-                    </span>
-                    <span class="info-pill time-pill">
-                        ⌛ 2 Days
-                    </span>
-                    <span class="info-pill budget-pill">
-                        💰 95 JOD
-                    </span>
-                </div>
+                    <a href="" class="view-plan-dark-btn">→ View Plan Details</a>
+                </article>
 
-                <a href="roadmap.html" class="view-plan-dark-btn">→ View Plan Details</a>
-            </article>
+                <!-- Trip Card 2 (Turquoise Edge Accent) -->
+                <article class="upcoming-trip-card accent-teal">
+                    <div class="trip-card-header">
+                        <div class="trip-title-group">
+                            <h3>Northern Wonders & Hills</h3>
+                            <p class="trip-subtitle">Ajloun, Irbid, and Umm Qais viewpoint</p>
+                        </div>
+                    </div>
+
+                    <div class="trip-tags-row">
+                        <span class="info-pill calendar-pill">
+                            📅 24–26 Oct 2026
+                        </span>
+                        <span class="info-pill time-pill">
+                            ⌛ 2 Days
+                        </span>
+                        <span class="info-pill budget-pill">
+                            💰 95 JOD
+                        </span>
+                    </div>
+
+                    <a href="" class="view-plan-dark-btn">→ View Plan Details</a>
+                </article>
+            </div>
         </section>
 
         <!-- Past Trip Log Section -->
-        <div class="past-trip-list">
+        <section class="profile-section">
+            <h2 class="profile-section-title">Past Trip Log</h2>
+            <div class="past-trip-list">
                 <!-- 1. جرش وعجلون: قلعة وآثار -->
                 <article class="past-trip-item">
                     <div class="past-trip-icon icon-castle">
@@ -180,6 +187,12 @@
                 </article>
             </div>
 
+            <div class="trips-buttons-group">
+                <button class="show-more-dark-btn" type="button" id="showMoreTripsBtn">Show More</button>
+                <button class="show-more-dark-btn" type="button" id="budgetTripsBtn" onclick="window.location.href='Budget&ExperiencePlanner.html'">Budget</button>
+            </div>
+        </section>
+
         <!-- Footer Actions -->
         <div class="profile-footer-actions">
             <a href="#" class="logout-link-btn" id="logoutBtn">Log Out</a>
@@ -215,7 +228,9 @@
 
             <a href="jordan1.html" class="nav-item">
                 <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                    <polygon points="12,2 14.1,7.2 19.8,6.1 17.5,11.3 21.8,15 16.1,16.2 15.2,21.9 12,17.2 8.8,21.9 7.9,16.2 2.2,15 6.5,11.3 4.2,6.1 9.9,7.2"></polygon>
+                    <polygon
+                        points="12,2 14.1,7.2 19.8,6.1 17.5,11.3 21.8,15 16.1,16.2 15.2,21.9 12,17.2 8.8,21.9 7.9,16.2 2.2,15 6.5,11.3 4.2,6.1 9.9,7.2">
+                    </polygon>
                 </svg>
                 <span>Know JORDAN</span>
             </a>

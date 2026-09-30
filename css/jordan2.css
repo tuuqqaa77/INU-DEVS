@@ -5,7 +5,7 @@
   --text-dark: #221510;
   --text-muted: #7D7571;
   --primary-terracotta: #B24C38;
-  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-bg: rgba(255, 255, 255, 0.88);
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
 }
@@ -18,6 +18,10 @@
   -webkit-font-smoothing: antialiased;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--bg-color);
   font-family: var(--font-sans);
@@ -27,12 +31,16 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  display: flex;
+  justify-content: center;
 }
 
-/* إلغاء حواف الموبايل وإطاراته نهائياً */
+/* =========================================================
+   App Container - Responsive from Mobile to Desktop
+   ========================================================= */
 .app-container {
   width: 100%;
-  max-width: 640px;
+  max-width: 960px;
   min-height: 100vh;
   min-height: 100dvh;
   margin: 0 auto;
@@ -45,11 +53,13 @@ body {
   border: none !important;
 }
 
-/* Hero Section */
+/* =========================================================
+   Hero Section with Dynamic Background Image
+   ========================================================= */
 .hero-header {
-  height: 280px;
+  height: clamp(240px, 32vh, 360px);
   background: url('../assets/JARASH 1.jpeg') center/cover no-repeat;
-  padding: 20px 20px 10px 20px;
+  padding: clamp(16px, 2.5vw, 24px) clamp(16px, 3.5vw, 32px) clamp(10px, 1.8vw, 16px) clamp(16px, 3.5vw, 32px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -62,7 +72,7 @@ body {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(180deg, rgba(30, 20, 15, 0.5) 0%, rgba(30, 20, 15, 0.15) 50%, rgba(250, 248, 243, 1) 100%);
+  background: linear-gradient(180deg, rgba(30, 20, 15, 0.5) 0%, rgba(30, 20, 15, 0.18) 50%, rgba(250, 248, 243, 1) 100%);
   z-index: 1;
 }
 
@@ -72,6 +82,7 @@ body {
   align-items: center;
   z-index: 2;
   position: relative;
+  width: 100%;
 }
 
 .left-brand-group {
@@ -82,15 +93,15 @@ body {
 
 .brand-logo {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: clamp(1.15rem, 2.2vw, 1.35rem);
   letter-spacing: 0.12em;
   color: #FFFFFF;
   text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
 
 .avatar-wrapper {
-  width: 38px;
-  height: 38px;
+  width: clamp(34px, 4.5vw, 40px);
+  height: clamp(34px, 4.5vw, 40px);
   border-radius: 50%;
   overflow: hidden;
   border: 1.5px solid rgba(255, 255, 255, 0.85);
@@ -99,6 +110,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.avatar-wrapper:hover {
+  transform: scale(1.05);
 }
 
 .avatar-wrapper img {
@@ -122,28 +138,43 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
+  transition: background-color 0.2s ease;
 }
 
-/* Search Box */
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================================
+   Search Box
+   ========================================================= */
 .search-box {
   z-index: 2;
   position: relative;
-  margin-bottom: 12px;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto 10px auto;
 }
 
 .search-box input {
   width: 100%;
-  padding: 12px 16px 12px 42px;
+  padding: clamp(10px, 1.8vw, 13px) 16px clamp(10px, 1.8vw, 13px) 42px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  font-size: 0.88rem;
+  font-size: clamp(0.84rem, 1.4vw, 0.92rem);
   font-family: inherit;
   color: var(--text-dark);
   outline: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.search-box input:focus {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: var(--primary-terracotta);
 }
 
 .search-icon {
@@ -152,40 +183,48 @@ body {
   top: 50%;
   transform: translateY(-50%);
   color: #666;
+  font-size: 14px;
 }
 
-/* Main Place Card */
+/* =========================================================
+   Main Content Area
+   ========================================================= */
 .main-content {
   flex: 1;
-  padding: 0 20px 115px 20px; /* مسافة أمان لمنع التداخل مع البار السفلي */
-  margin-top: -24px;
+  padding: 0 clamp(16px, 3.5vw, 32px) 115px clamp(16px, 3.5vw, 32px);
+  margin-top: clamp(-28px, -4vw, -20px);
   z-index: 3;
 }
 
+/* =========================================================
+   Main Featured Place Card
+   ========================================================= */
 .main-place-card {
   background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-radius: 22px;
-  padding: 18px 20px;
+  border-radius: clamp(18px, 2.5vw, 24px);
+  padding: clamp(16px, 2.5vw, 24px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.9);
-  margin-bottom: 22px;
+  margin-bottom: clamp(18px, 2.5vw, 24px);
 }
 
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
 }
 
 .place-title {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
   font-weight: 700;
   color: var(--text-dark);
   line-height: 1.25;
+  word-break: break-word;
+  flex: 1;
 }
 
 .bookmark-btn {
@@ -194,21 +233,35 @@ body {
   font-size: 1.25rem;
   cursor: pointer;
   color: var(--text-dark);
+  padding: 4px;
+  min-width: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.bookmark-btn:hover {
+  transform: scale(1.1);
+  color: var(--primary-terracotta);
 }
 
 .place-sub {
-  font-size: 0.8rem;
+  font-size: clamp(0.78rem, 1.4vw, 0.85rem);
   font-weight: 600;
   color: var(--primary-terracotta);
   margin-top: 4px;
 }
 
 .place-location {
-  font-size: 0.8rem;
+  font-size: clamp(0.78rem, 1.4vw, 0.85rem);
   color: var(--text-dark);
   margin-top: 6px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 5px;
 }
 
@@ -216,13 +269,18 @@ body {
   color: var(--text-muted);
 }
 
-/* Action Bar */
+/* =========================================================
+   Action Bar
+   ========================================================= */
 .action-bar {
   display: flex;
   justify-content: space-around;
-  margin: 16px 0;
-  padding: 12px 0 6px 0;
+  align-items: center;
+  margin: clamp(12px, 2vw, 18px) 0;
+  padding: clamp(10px, 1.8vw, 14px) 0 clamp(6px, 1vw, 8px) 0;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .action-item {
@@ -230,10 +288,21 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  font-size: 0.75rem;
+  font-size: clamp(0.72rem, 1.2vw, 0.78rem);
   font-weight: 600;
   color: var(--text-dark);
   cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: transform 0.15s ease, color 0.15s ease;
+  min-width: 52px;
+  min-height: 44px;
+  justify-content: center;
+}
+
+.action-item:hover {
+  transform: translateY(-1px);
+  color: var(--primary-terracotta);
 }
 
 .action-item i {
@@ -241,28 +310,33 @@ body {
   color: var(--primary-terracotta);
 }
 
-/* About Section */
+/* =========================================================
+   About Section
+   ========================================================= */
 .about-section h3 {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
   margin-bottom: 6px;
   color: var(--text-dark);
 }
 
 .about-section p {
-  font-size: 0.82rem;
+  font-size: clamp(0.8rem, 1.3vw, 0.88rem);
   color: #4A423D;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* Carousel Section */
+/* =========================================================
+   Carousel Section (Explore More Sites)
+   ========================================================= */
 .places-carousel-section {
   margin-top: 10px;
+  width: 100%;
 }
 
 .section-title {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: clamp(1.15rem, 2vw, 1.3rem);
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 12px;
@@ -270,10 +344,12 @@ body {
 
 .carousel-container {
   display: flex;
-  gap: 12px;
+  gap: clamp(10px, 1.8vw, 16px);
   overflow-x: auto;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
 }
 
 .carousel-container::-webkit-scrollbar {
@@ -281,34 +357,37 @@ body {
 }
 
 .mini-card {
-  min-width: 120px;
-  max-width: 120px;
-  height: 110px;
+  min-width: clamp(120px, 16vw, 150px);
+  max-width: clamp(120px, 16vw, 150px);
+  height: clamp(110px, 14vw, 135px);
   border-radius: 16px;
   overflow: hidden;
   position: relative;
   cursor: pointer;
   flex-shrink: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  scroll-snap-align: start;
 }
 
 .mini-card:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .mini-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .mini-card-title {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.88));
   color: #FFFFFF;
-  font-size: 0.72rem;
+  font-size: clamp(0.7rem, 1.2vw, 0.78rem);
   font-weight: 600;
   padding: 6px;
   text-align: center;
@@ -317,16 +396,18 @@ body {
   text-overflow: ellipsis;
 }
 
-/* شريط التنقل السفلي العائم */
+/* =========================================================
+   Floating Bottom Navigation Bar
+   ========================================================= */
 .bottom-nav {
   position: fixed;
-  bottom: 16px;
+  bottom: clamp(10px, 2vh, 18px);
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 32px);
-  max-width: 500px;
+  max-width: 480px;
   height: 64px;
-  background: rgba(247, 243, 236, 0.92);
+  background: rgba(247, 243, 236, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   display: flex !important;
@@ -337,7 +418,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.85);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   z-index: 1000;
-  padding: 0 12px;
+  padding: 0 10px;
 }
 
 .nav-item {
@@ -352,6 +433,7 @@ body {
   font-weight: 600;
   flex: 1;
   transition: color 0.2s ease;
+  min-height: 48px;
 }
 
 .nav-item i,
@@ -361,4 +443,34 @@ body {
 
 .nav-item.active {
   color: var(--primary-terracotta);
+}
+
+/* =========================================================
+   شاشات الهواتف الصغيرة (< 380px)
+   ========================================================= */
+@media (max-width: 380px) {
+  .hero-header {
+    height: 220px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .main-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .main-place-card {
+    padding: 14px 12px;
+  }
+
+  .action-bar {
+    gap: 4px;
+  }
+
+  .action-item {
+    font-size: 0.68rem;
+    padding: 2px 4px;
+    min-width: 46px;
+  }
 }
