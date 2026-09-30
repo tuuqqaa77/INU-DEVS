@@ -77,52 +77,61 @@ body {
 }
 
 /* ترتيب الهيدر العلوي */
-.onboarding-header {
+.login-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 24px 20px 10px 20px;
     width: 100%;
-    max-width: 450px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 5;
-}
-.left-header-group {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* المسافة بين اللغة ونشمي */
+    box-sizing: border-box;
 }
 
-.top-btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: white;
-    padding: 8px 14px;
-    border-radius: 25px;
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    background: #e8e2d5;
+    padding: 5px 12px;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.logo-text {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
     font-size: 13px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    color: #1a1a1a;
 }
 
-/* أفتار نشمي */
-.nashmy-avatar {
-    width: 42px;
-    height: 42px;
+.nashmy-mini-avatar {
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    border: 2px solid #b58863;
     overflow: hidden;
-    cursor: pointer;
-    flex-shrink: 0;
+    border: 1px solid #b58863;
 }
 
-.nashmy-avatar img {
+.nashmy-mini-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
+.top-btn-light {
+    background: #e8e2d5;
+    border: none;
+    color: #333;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
 .lang-dropdown-container {
     position: relative;
 }
@@ -489,35 +498,37 @@ body {
 }
 
 /* أزرار جوجل وأبل الرمادية البارزة */
-.social-btn {
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-social {
     width: 100%;
-    background: #e5e5e5;
-    border: 1px solid #d4d4d4;
-    padding: 10px;
-    border-radius: 18px;
-    font-size: 12px;
+    height: 48px; /* زيادة الارتفاع قليلاً ليطابق باقي أزرار الصفحة */
+    background-color: #dcd7ce;
+    border: none;
+    border-radius: 12px; /* جعل الحواف ناعمة ومتناسقة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: #333;
     font-weight: 500;
     cursor: pointer;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    color: #333;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.03);
+    transition: background-color 0.2s ease;
+    box-sizing: border-box;
 }
 
-.signup-text {
-    font-size: 11px;
-    color: #666;
-    margin-top: 10px;
-    text-align: center;
+.btn-social:hover {
+  background-color: #d0cbc1;
 }
 
-.signup-text a {
-    color: #b56353;
-    text-decoration: underline;
-    font-weight: bold;
+.apple-icon {
+  font-size: 1.1rem;
+  color: #000;
 }
 
 
@@ -537,7 +548,7 @@ body {
 
 
 /* =========================================================
-   JOVIA - Complete Global & Component Stylesheet
+   JOVIA - home.html
    ========================================================= */
 
 :root {
@@ -550,6 +561,7 @@ body {
     --font-sans: 'Plus Jakarta Sans', sans-serif;
 }
 
+/* التصحيح هنا: استخدام النجمة بدلاً من الشرطة */
 * {
     margin: 0;
     padding: 0;
@@ -557,37 +569,78 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
-body {
-    background-color: #1A1412;
-    font-family: var(--font-sans);
-    color: var(--primary-dark);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* App Viewport Wrapper for Desktop Centering */
-.app-viewport-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-}
-
-.mobile-frame {
-    width: 100%;
-    max-width: 414px;
-    height: 100vh;
-    max-height: 896px;
-    background-color: var(--bg-main);
+/* =========================================================
+   تنسيق الهيدر وصورة الكرك والتموجات المتحركة (Full Width)
+   ========================================================= */
+.planner-hero-header {
     position: relative;
-    overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
-    border-radius: 38px;
+    width: 100%;
+    height: 320px; /* ارتفاع مريح ومناسب للشاشات الواسعة */
+    background: linear-gradient(180deg, rgba(20, 10, 5, 0.4) 0%, rgba(20, 10, 5, 0.05) 100%), 
+                url('../images/Karak.jpeg') center center / cover no-repeat;
+    padding: 24px;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    z-index: 5;
+}
+
+.hero-separate-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+/* حاوية التموج المتحرك أسفل الهيدر */
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 6;
+}
+
+.animated-wave {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* حركة التموجات الانسيابية */
+.parallax-waves > use {
+    animation: move-wave 7s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax-waves > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax-waves > use:nth-child(2) {
+    animation-delay: -4s;
+    animation-duration: 10s;
+}
+
+.parallax-waves > use:nth-child(3) {
+    animation-delay: -6s;
+    animation-duration: 13s;
+}
+
+@keyframes move-wave {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
 }
 
 /* =========================================================
@@ -595,78 +648,121 @@ body {
    ========================================================= */
 .planner-hero-header {
     position: relative;
-    height: 175px;
-    background: linear-gradient(180deg, rgba(20, 10, 5, 0.5) 0%, rgba(20, 10, 5, 0.1) 100%), 
-                url('/images/Karak.jpeg') center center / cover no-repeat;
-    padding: 16px 18px;
+    width: 100%;
+    height: 260px;
+    background: linear-gradient(180deg, rgba(20, 10, 5, 0.3) 0%, rgba(20, 10, 5, 0.05) 100%), 
+                url('../images/Karak.jpeg') center center / cover no-repeat;
+    padding: 20px;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 5;
 }
 
-/* Separate Glass Buttons Bar */
+/* إيقاف القوس الثابت القديم تماماً لكي لا يتداخل مع الأمواج المتحركة */
+.planner-hero-header::after {
+    display: none !important;
+}
+/* شريط العناصر العلوي فوق صورة الكرك */
 .hero-separate-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    width: 100%;
     z-index: 10;
 }
-
 /* Glassmorphism Class */
-.glass-badge {
-    background: rgba(255, 255, 255, 0.28) !important;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.45) !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
-    border-radius: 20px;
+/* تنسيق شريط شعار JOVIA */
+.header-left-brand {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 6px 18px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.logo-badge {
-    padding: 6px 14px;
-}
-
-.hero-logo {
-    font-family: var(--font-serif);
-    color: #FFFFFF;
-    font-size: 1.15rem;
+.brand-box {
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
-    letter-spacing: 0.12em;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    color: #ffffff; /* لون أبيض ليظهر بوضوح فوق الصورة */
 }
 
 /* Glass Nashmy Avatar Button */
 .nashmy-avatar-btn {
-    width: 42px !important;
-    height: 42px !important;
-    border-radius: 50% !important;
-    overflow: hidden !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    padding: 2px !important;
-    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .nashmy-avatar-btn img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    border-radius: 50% !important;
-    display: block !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
+
+
 /* Glass Language Button */
-.lang-switch-btn {
-    color: #FFFFFF;
-    padding: 7px 13px;
-    border-radius: 20px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    cursor: pointer;
+.top-btn {
     display: flex;
     align-items: center;
     gap: 6px;
-    border: none;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+/* القائمة المنسدلة للغات */
+.lang-dropdown-container {
+    position: relative;
+}
+
+.lang-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 120px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 100;
+}
+
+.lang-menu.hidden-menu {
+    display: none;
+}
+
+.lang-menu div {
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.lang-menu div:hover {
+    background-color: #F7F3EC;
+    color: #A85A43;
 }
 
 /* Animated Wave at Bottom of Header */
@@ -911,7 +1007,7 @@ body {
     border-radius: 25px;
     font-size: 1.05rem;
     font-weight: 700;
-    box-shadow: 0 8px 20px rgba(178, 76, 56, 0.4);
+    box-shadow: 0 8px 20px #b24c3866;
     transition: background-color 0.2s, transform 0.1s;
 }
 
@@ -922,52 +1018,42 @@ body {
 /* =========================================================
    Bottom Navigation Bar
    ========================================================= */
-.bottom-nav {
+/* شريط التنقل السفلي العائم */
+.bottom-nav.floating-nav {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    background: #FFFFFF;
-    border-top: 1px solid #EFECE6;
+    bottom: 12px;
+    left: 20px;
+    right: 20px;
+    height: 65px;
+    background: rgba(247, 243, 236, 0.378);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-bottom-left-radius: 38px;
-    border-bottom-right-radius: 38px;
-    z-index: 10;
+    border-radius: 35px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 8px 25px rgba(45, 38, 38, 0.388);
+    z-index: 20;
 }
 
 .nav-item {
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
-    text-decoration: none;
-    color: #9E948D;
-    font-size: 0.7rem;
-    font-weight: 600;
+    gap: 3px;
+    color: #888;
+    font-size: 11px;
 }
 
-.nav-item i {
-    font-size: 1.25rem;
+.nav-item i, .nav-item svg {
+    font-size: 16px;
 }
 
 .nav-item.active {
-    color: var(--primary-terracotta);
+    color:#b24c38cf;
+    font-weight: 600;
 }
-/* تنسيق أيقونة النجمة السباعية بالأزرار السفلية */
-.nav-item .nav-star-icon {
-    width: 22px;
-    height: 22px;
-    fill: currentColor;
-    transition: fill 0.2s ease;
-}
-
-.nav-item.active .nav-star-icon {
-    fill: var(--primary-terracotta);
-}
-
 /* =========================================================
    Responsive Rules for Larger Screens
    ========================================================= */
@@ -1011,148 +1097,198 @@ body {
 
 
 
-
-/* =========================
-   Home2 Container & Responsive Fix
-========================= */
-
-.home2-page {
-    min-height: 100vh;
-    width: 100%;
-    background-color: #F8F6F1;
-    padding-bottom: 160px !important;
+/* فرض الترتيب الثابت والمضبوط للهيدر في جميع الصفحات */
+.login-header {
+    display: flex !important;
+    flex-direction: row-reverse !important; /* لضمان أن الصندوق على اليسار وزر اللغة على اليمين */
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 15px 20px !important;
+    box-sizing: border-box !important;
 }
 
-.home2-container {
-    width: 440px;
-    max-width: calc(100% - 32px);
-    margin: -10px auto 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+/* تنسيق وترتيب العناصر داخل صندوق JOVIA ونشمي ليكونوا بالترتيب الصحيح */
+.brand-link {
+    display: flex !important;
+    flex-direction: row !important; /* JOVIA أولاً ثم نشمي */
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+/* =========================================================
+   إصلاح جذري لإطار الموبايل والخلفية والأمواج
+   ========================================================= */
+body {
+    background-color: #1a1a1a !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/* إجبار إطار الموبايل على تغطية الشاشة بالكامل دون أي فراغات سوداء */
+.mobile-frame {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 414px !important;
+    max-height: none !important;
+    background-color: #FAF8F5 !important;
+    position: relative !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45) !important;
+    border-radius: 0px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* تثبيت هيدر الكرك والتموج المنحني بأسفله ليظهر بشكل مثالي */
+.planner-hero-header {
+    position: relative !important;
+    width: 100% !important;
+    height: 280px !important;
+    background: linear-gradient(180deg, rgba(20, 10, 5, 0.35) 0%, rgba(20, 10, 5, 0.05) 100%), 
+                url('../images/Karak.jpeg') center center / cover no-repeat !important;
+    padding: 20px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    z-index: 5 !important;
+}
+
+.planner-hero-header::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -1px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 40px !important;
+    background-color: #FAF8F5 !important;
+    border-top-left-radius: 50% 40px !important;
+    border-top-right-radius: 50% 40px !important;
+    pointer-events: none !important;
+    z-index: 6 !important;
+}
+
+
+
+/* إزالة أي هوامش تمنع التمدد من الجسم والإطار */
+body, .app-viewport-wrapper, .mobile-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    background-color: var(--bg-main, #FAF8F5) !important;
+}
+
+/* الهيدر الذي سيملأ عرض الشاشة بالكامل بكبات إضافية */
+.planner-hero-header {
     position: relative;
-    z-index: 5;
+    width: 100%;
+    height: 320px;
+    background: linear-gradient(180deg, rgba(20, 10, 5, 0.4) 0%, rgba(20, 10, 5, 0.05) 100%), 
+                url('../images/Karak.jpeg') center center / cover no-repeat;
+    padding: 24px 30px;
+    box-sizing: border-box;
 }
 
-.itinerary-header {
-    margin-bottom: 4px;
-}
-
-.itinerary-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    font-weight: 600;
-    color: #222222;
-    line-height: 1.2;
-}
-
-.itinerary-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    color: #555555;
-    margin-top: 2px;
-}
-
-/* Card Styling Fix */
-.itinerary-card {
+/* تنسيق العناصر داخل الهيدر لتكون مرتبة في المنتصف مع مسافة جانبية لطيفة */
+.hero-separate-nav {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 16px;
-    padding: 14px 16px;
-    border-radius: 24px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.itinerary-card.day-1 { background: #fbeee6; }
-.itinerary-card.day-2 { background: #ede8df; }
-.itinerary-card.day-3 { background: #e8edf2; }
-
-.itinerary-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-}
-
-.card-thumb-wrapper {
-    width: 95px;
-    height: 105px;
-    border-radius: 18px;
+/* حاوية الأمواج المتحركة */
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
     overflow: hidden;
-    flex-shrink: 0;
-    background: #e2ded7;
+    pointer-events: none;
 }
 
-.card-thumb {
+.animated-wave {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     display: block;
 }
 
-.card-details {
-    flex: 1;
+
+/* حاوية زر اللغات */
+.lang-dropdown-container {
+    position: relative;
+    display: inline-block;
 }
 
-.card-details h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: #222222;
-    margin-bottom: 6px;
-}
-
-.itinerary-bullets {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.itinerary-bullets li {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
-    color: #444444;
+/* زر اختيار اللغة العلوي */
+.top-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
     display: flex;
     align-items: center;
     gap: 6px;
+    transition: all 0.2s ease;
 }
 
-.diamond-icon {
-    font-size: 11px;
-    color: #333333;
+.top-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
 
-.arrow-indicator {
-    font-size: 22px;
-    color: #333333;
-    font-weight: 300;
-    padding-right: 4px;
+/* تنسيق القائمة المنسدلة نفسها */
+.lang-menu {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background-color: #FFFFFF;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    z-index: 1000;
+    min-width: 120px;
+    border: 1px solid #eee;
+    animation: fadeInMenu 0.2s ease;
 }
 
-/* Roadmap Green Button */
-.roadmap-btn {
-    width: 100%;
-    padding: 16px;
-    margin-top: 10px;
-    background: #68735b;
-    color: #ffffff;
-    border: none;
-    border-radius: 999px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    box-shadow: 0 6px 20px rgba(104, 115, 91, 0.25);
-    transition: background 0.2s ease, transform 0.2s ease;
+/* عناصر الخيارات داخل القائمة */
+.lang-menu div {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    color: #221510;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: left;
 }
 
-.roadmap-btn:hover {
-    background: #5a644e;
-    transform: translateY(-2px);
+.lang-menu div:hover {
+    background-color: #FAF8F5;
+    color: #B24C38;
+}
+
+/* كلاس لإخفاء القائمة */
+.hidden-menu {
+    display: none !important;
+}
+
+@keyframes fadeInMenu {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }

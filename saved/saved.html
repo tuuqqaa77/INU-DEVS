@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOVIA - Your Saved</title>
+  <link rel="stylesheet" href="saved.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header / Top Bar -->
+    <header class="header">
+      <div class="brand">JOVIA</div>
+      <div class="avatar-wrapper" id="chatbotAvatarBtn" title="Click to chat with JOVIA Bot!">
+        <img src="../assets/nnn.jpeg" alt="JOVIA Avatar" class="avatar-img">
+        <span class="online-status"></span>
+      </div>
+      <button class="lang-btn">
+        <i class="fa-solid fa-globe"></i> English
+      </button>
+    </header>
+
+    <!-- Title & Score Section -->
+    <section class="title-section">
+      <h1 class="page-title">Your Saved</h1>
+      <div class="score-badge">SCORE:600</div>
+    </section>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" id="searchInput" placeholder="Search in Saved..." onkeyup="filterSavedItems()">
+    </div>
+
+    <!-- Saved Cards List -->
+    <main class="cards-list" id="cardsList">
+      
+      <!-- Card 1: Wadi Mujib -->
+      <article class="saved-card">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&q=80&w=400" alt="Wadi Mujib" class="card-img">
+        </div>
+        <div class="card-content">
+          <h2 class="card-title">WADI MUJIB</h2>
+          <p class="card-desc">
+            Wadi Mujib in Ajloun is a picturesque valley known for its fresh springs, olive groves, and historic watermills.
+          </p>
+          <div class="card-rating">
+            <span class="star">★</span> <span class="rating-val">4.8</span> <span class="reviews-count">(2.3k reviews)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Aqaba -->
+      <article class="saved-card">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=400" alt="Aqaba" class="card-img">
+        </div>
+        <div class="card-content">
+          <h2 class="card-title">AQABA</h2>
+          <p class="card-desc">
+            Aqaba is Jordan's only coastal city, famous for its warm Red Sea beaches and vibrant coral reefs.
+          </p>
+          <div class="card-rating">
+            <span class="star">★</span> <span class="rating-val">4.6</span> <span class="reviews-count">(2.8k reviews)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Jerash -->
+      <article class="saved-card">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&q=80&w=400" alt="Jerash" class="card-img">
+        </div>
+        <div class="card-content">
+          <h2 class="card-title">JERASH</h2>
+          <p class="card-desc">
+            Jerash is famous for its remarkably preserved ancient Roman ruins, featuring grand colonnaded streets, theaters, and temples.
+          </p>
+          <div class="card-rating">
+            <span class="star">★</span> <span class="rating-val">4.7</span> <span class="reviews-count">(2.6k reviews)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: Madaba -->
+      <article class="saved-card">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&q=80&w=400" alt="Madaba" class="card-img">
+        </div>
+        <div class="card-content">
+          <h2 class="card-title">MADABA</h2>
+          <p class="card-desc">
+            Madaba Museum showcases exquisite Byzantine mosaics and rich archaeological artifacts that tell the story of Jordan's ancient history.
+          </p>
+          <div class="card-rating">
+            <span class="star">★</span> <span class="rating-val">4.3</span> <span class="reviews-count">(2.7k reviews)</span>
+          </div>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- Feature Action Buttons -->
+    <section class="action-grid">
+      <div class="action-card">
+        <div class="action-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M8 3h8l1 4h-10z"/>
+            <path d="M6 7c0 4 3 6 3 9 0 3-2 3-2 5h10s-2 0-2-3c0-3 3-5 3-9H6z"/>
+            <line x1="6" y1="12" x2="18" y2="12"/>
+          </svg>
+        </div>
+        <div class="action-text">
+          <strong>LOCAL</strong>
+          <span>EXPERIENCES</span>
+        </div>
+      </div>
+
+      <div class="action-card">
+        <div class="action-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+            <line x1="8" y1="2" x2="8" y2="18"></line>
+            <line x1="16" y1="6" x2="16" y2="22"></line>
+          </svg>
+        </div>
+        <div class="action-text">
+          <strong>OFFLINE</strong>
+          <span>MAP</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+      <a href="../account/account.html" class="nav-item">
+        <i class="fa-regular fa-user"></i>
+        <span>Profile</span>
+      </a>
+      <a href="../nashmy.html" class="nav-item">
+        <i class="fa-regular fa-building"></i>
+        <span>Home</span>
+      </a>
+      <a href="#" class="nav-item">
+        <i class="fa-regular fa-compass"></i>
+        <span>Map</span>
+      </a>
+      <a href="#" class="nav-item active">
+        <!-- 7-Pointed Jordan Star SVG -->
+        <svg class="jordan-star" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 L13.8 8.1 L20 6.5 L16.8 11.8 L22 15.5 L15.6 16.5 L14.5 22.8 L12 17 L9.5 22.8 L8.4 16.5 L2 15.5 L7.2 11.8 L4 6.5 L10.2 8.1 Z" />
+        </svg>
+        <span>Know JORDAN</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Chatbot Modal Popup -->
+  <div class="chat-modal-overlay" id="chatModal">
+    <div class="chat-modal-content">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <img src="../assets/nnn.jpeg" alt="JOVIA Assistant" class="chat-avatar">
+          <div>
+            <h3>JOVIA Assistant</h3>
+            <span class="status-text">Online | Ready to help</span>
+          </div>
+        </div>
+        <button class="close-chat-btn" id="closeChatBtn">&times;</button>
+      </div>
+      
+      <div class="chat-body" id="chatBody">
+        <div class="message bot-message">
+          Hello! 👋 Welcome to JOVIA. How can I help you explore Jordan today?
+        </div>
+      </div>
+
+      <div class="chat-footer">
+        <input type="text" id="chatInput" placeholder="Ask something about Jordan..." onkeydown="handleChatKeyPress(event)">
+        <button id="sendChatBtn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="saved.js"></script>
+</body>
+</html>
