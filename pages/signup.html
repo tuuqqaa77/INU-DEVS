@@ -29,7 +29,7 @@
                     </a>
 
                     <a href="nashmy.html" class="nashmy-mini-avatar" title="Talk to Nashmy AI">
-                        <img src="../assets/nashmy.png" alt="Nashmy" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100'">
+                        <img src="../assets/nashmy.png" alt="Nashmy" >
                     </a>
                 </div>
 
@@ -60,17 +60,17 @@
                 <div class="signup-card">
                     
                     <div class="input-group">
-                        <label>Full Name</label>
+                        <label for="nameInput">Full Name</label>
                         <input type="text" id="nameInput" placeholder="Enter your full name">
                     </div>
 
                     <div class="input-group">
-                        <label>Email or Phone Number</label>
-                        <input type="text" id="emailInput" placeholder="Enter your Email or Phone Number">
+                        <label for="emailInput">Email or Phone Number</label>
+                        <input type="email" id="emailInput" placeholder="Enter your Email">
                     </div>
 
                     <div class="input-group">
-                        <label>Password</label>
+                        <label for="passwordInput">Password</label>
                         <div class="password-wrapper">
                             <input type="password" id="passwordInput" placeholder="Create a password">
                             <i class="fa-regular fa-eye-slash toggle-password" id="togglePassword"></i>
@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="input-group">
-                        <label>Confirm Password</label>
+                        <label for="confirmPasswordInput">Confirm Password</label>
                         <div class="password-wrapper">
                             <input type="password" id="confirmPasswordInput" placeholder="Confirm your password">
                             <i class="fa-regular fa-eye-slash toggle-password" id="toggleConfirmPassword"></i>
@@ -102,7 +102,7 @@
                 <!-- أزرار الدخول السريع -->
                 <div class="social-login">
                     <!-- زر Google -->
-                    <button type="button" class="btn-social">
+                    <button type="button" class="btn-social" id="googleSignUpBtn">
                         <svg viewBox="0 0 48 48" width="18" height="18">
                             <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
                             <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
@@ -129,6 +129,6 @@
     </div>
 
     <!-- JavaScript File -->
-    <script src="../js/signup.js"></script>
+    <script type="module" src="../js/signup.js"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@
             <div class="brand-pill-glass">
                 <a href="home.html" class="brand-link">JOVIA</a>
                 <a href="nashmy.html" class="avatar-link" title="Nashmy">
-                    <img class="header-avatar" src="../assets/nashmy.png" alt="Nashmy Avatar" onerror="this.src='avatar.png'">
+                    <img class="header-avatar" src="../assets/nashmy.png" alt="Nashmy Avatar">
                 </a>
             </div>
 
@@ -53,10 +53,10 @@
         <!-- Profile Information Section -->
         <section class="profile-user-card">
             <div class="user-meta-info">
-                <img src="../assets/pfp.webp" alt="Nashmy" class="profile-user-avatar" onerror="this.src='../assets/images/Image 22.jpeg'">
+                <img src="../assets/pfp.webp" alt="Profile Avatar" class="profile-user-avatar" onerror="this.src='../assets/images/Image 22.jpeg'">
                 <div class="user-text-details">
-                    <h1 class="user-display-name">Lama Ahmad</h1>
-                    <p class="user-email-address">lamaahmad@gmail.com</p>
+                    <h1 class="user-display-name" id="userDisplayName">Loading...</h1>
+                    <p class="user-email-address" id="userEmailAddress">Loading...</p>
                 </div>
             </div>
 
@@ -182,7 +182,7 @@
 
         <!-- Footer Actions -->
         <div class="profile-footer-actions">
-            <a href="login.html" class="logout-link-btn">Log Out</a>
+            <a href="#" class="logout-link-btn" id="logoutBtn">Log Out</a>
             <a href="#" class="help-support-link">Help & Support</a>
         </div>
 
@@ -213,7 +213,7 @@
                 <span>Map</span>
             </a>
 
-            <a href="know-jordan.html" class="nav-item">
+            <a href="jordan1.html" class="nav-item">
                 <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                     <polygon points="12,2 14.1,7.2 19.8,6.1 17.5,11.3 21.8,15 16.1,16.2 15.2,21.9 12,17.2 8.8,21.9 7.9,16.2 2.2,15 6.5,11.3 4.2,6.1 9.9,7.2"></polygon>
                 </svg>
@@ -223,8 +223,8 @@
 
     </main>
 
-    <!-- Separate JS File Link -->
-    <script src="../js/profile.js"></script>
+    <!-- JS Module -->
+    <script type="module" src="../js/profile.js"></script>
 
 </body>
 
